@@ -1,42 +1,37 @@
-# BOMCASE Handoff Outputs
+# Handoff Outputs
 
-## 1. Purpose
+This directory stores generated delivery handoff documents.
 
-说明：
+Outputs are delivered artifacts, not fact sources.
 
-本目录用于归档 BOMCASE 项目已确认交付的交接文档或交付物。
+## Directory Rules
 
-## 2. Boundary
+- Official handoff documents may be stored under this directory.
+- `_drafts/` stores test drafts and validation outputs.
+- `_drafts/` must not be used as a fact source.
+- Old handoff outputs must not be used to reconstruct current page facts.
+- Archive, old output, draft output, and `_drafts/` must not be read as fact sources for new delivery generation.
 
-* 本目录是 outputs 层；
-* 本目录不是事实源；
-* 本目录默认只读归档，不承载知识库实时更新；
-* 本目录内容不得反向覆盖 `../../pages/`、`../../decisions.md`、`../../pending.md`、`../../sources/`；
-* 新交付件归档到这里，不再放入 `../../sources/`；
-* 历史已存在于 `../../sources/` 的 `*-handoff.md` 保持不动，作为 historical source material。
+## Generation Rule
 
-## 3. Write Rule
+To generate a new handoff document, use:
 
-说明：
+1. current page brief
+2. page active source
+3. `pending.md`
+4. `decisions.md`
+5. `prompts/delivery-output-handoff.md`
 
-只有经过 `Delivery Output Loop` 生成并人工确认的交付物，才允许归档到本目录。
+Do not generate new handoff documents by editing old output as the source of truth.
 
-## 4. Recommended Naming
+## Draft Rule
 
-命名建议：
+Test drafts may be used for validation discussion, but they do not update:
 
-* `YYYY-MM-page-name-handoff-vX.X.md`
-* `YYYY-MM-page-name-handoff.md`
+- page brief
+- active source
+- `pending.md`
+- `decisions.md`
+- prompt rules
 
-补充说明：
-
-* 同迭代多次更新可使用版本号；
-* 跨迭代可使用月份或迭代标识；
-* 不强制预建页面子目录，必要时再创建。
-
-## 5. Relationship With Sources
-
-* `sources/` 保存原始事实材料；
-* `outputs/handoff/` 保存交付物快照；
-* 两者不得混用；
-* 如交付物中出现新的事实缺口，应先回到 `Knowledge Update Loop` 更新知识库，而不是直接在 outputs 中补事实。
+If a test draft exposes missing or incorrect facts, return to fact-layer maintenance before generating a formal handoff.

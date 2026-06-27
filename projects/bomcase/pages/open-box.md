@@ -3,21 +3,20 @@ project: bomcase
 type: page_brief
 status: current
 knowledge_role: fact-brief
-source: ../sources/open-box-handoff.md
-additional_source: ../sources/open-box-handoff-v1.3.md
+active_source: ../sources/open-box.md
 updated: 2026-06-18
 ---
 
 # Open Box Page Brief
 
-## 1. 来源
+## 1. Source Policy
 
-* 初始 source：`../sources/open-box-handoff.md`
-* 本次补充 source：`../sources/open-box-handoff-v1.3.md`
-* `open-box-handoff-v1.3.md` 作为历史缺失补录，用于补齐 v1.2 引入、v1.3 延续的能量溢出轻提示口径；
-* 如需核对事实，以对应 source 为准；
-* 本文件是页面当前有效口径层（页面事实视图），不替代 sources 原始事实材料；
-* README/index 不作为事实源。
+* 本文件是 Open Box 当前页面事实压缩视图。
+* `active_source` 是当前 Open Box 的唯一详细事实载体。
+* Delivery Output 生成时必须读取 page brief、active source、`projects/bomcase/pending.md` 与 `projects/bomcase/decisions.md`。
+* 历史 source 信息只记录在 active source 的 Source History 中。
+* `projects/bomcase/sources/_archive/` 下文件仅用于人工历史回溯，不作为当前交付输出事实源。
+* `projects/bomcase/outputs/handoff/` 下的交付物不得反向作为事实源。
 
 ## 2. 页面目标
 

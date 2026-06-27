@@ -15,7 +15,7 @@
 2. `pending.md`：查看待确认项；
 3. `decisions.md`：查看关键判断与边界；
 4. `pages/*.md`：查看页面 brief；
-5. `sources/*-handoff.md`：核对历史原始材料（仅用于历史材料核对，不代表新增交付件归档路径）。
+5. 对应 page brief frontmatter 声明的 `active_source`：核对当前页面详细事实。
 
 ## 3. 当前文件导航
 
@@ -32,10 +32,10 @@
 
 * README 不是事实源；
 * `pages/*.md` 是当前可读页面层；
-* `pages/*.md` 作为交付生成时优先读取的页面层视图，但不替代 `sources/` 原始材料；
+* `pages/*.md` 作为交付生成时优先读取的页面层视图；
+* `pages/*.md` 通过 `active_source` 指向当前页面详细事实载体；
 * `sources/` 是原始事实材料层（事实核对入口）；
-* 历史已存在的 `sources/*-handoff.md` 保留为 historical source material；
-* 历史 `sources/*-handoff.md` 不迁移、不复制、不重命名；
+* superseded source、archive、old output、draft output、`outputs/handoff/_drafts/` 不作为当前事实源；
 * 新增交付件不得继续放入 `sources/`，统一归档到 `outputs/handoff/`；
 * `outputs/handoff/` 是交付归档层，不作为事实源；
 * decisions 是判断记录；
@@ -44,15 +44,15 @@
 
 ## 4. 当前页面 brief
 
-| 页面 | Brief | Source | status | knowledge_role | 待确认数量 |
+| 页面 | Brief | Active Source | status | knowledge_role | 待确认数量 |
 |---|---|---|---|---|---:|
-| home | `pages/home.md` | `sources/home-handoff.md` | current | handoff-brief | 2 |
-| shop | `pages/shop.md` | `sources/shop-handoff.md` | current | handoff-brief | 0 |
-| open-box | `pages/open-box.md` | `sources/open-box-handoff.md` | current | fact-brief | 5 |
-| open-box-result | `pages/open-box-result.md` | `sources/open-box-result-handoff.md` | current | handoff-brief | 1 |
-| toy-collection | `pages/toy-collection.md` | `sources/toy-collection-handoff.md` | current | handoff-brief | 8 |
+| home | `pages/home.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
+| shop | `pages/shop.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
+| open-box | `pages/open-box.md` | `sources/open-box.md` | current | fact-brief | - |
+| open-box-result | `pages/open-box-result.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
+| toy-collection | `pages/toy-collection.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
 
-待确认数量以 `pending.md` 当前汇总为准（当前合计 16 条，A:3 / B:13）。
+待确认数量以 `pending.md` 当前汇总为准。
 
 补充说明：
 
@@ -62,7 +62,7 @@
 * `handoff-brief` 用于研发交接、页面理解和待确认承接；
 * 除 `open-box.md` 外，其它 handoff-brief 当前不作为页面事实口径层使用；
 * 所有 page brief 均不替代 `sources/*.md`；
-* 事实争议或核对场景仍以 `sources/*-handoff.md` 为入口；
+* 事实争议或核对场景以 page brief 声明的 `active_source` 为入口；
 * 页面与项目入口统计以 `pending.md` 正式条目为准。
 
 ## 5. 主库路径调整说明
@@ -118,10 +118,21 @@
 
 流程：
 
-1. 读取最新 `pages/`、`decisions.md`、`pending.md`；
-2. 生成变更型交接文档或其他交付物；
-3. 人工确认；
-4. 归档到 `outputs/handoff/`。
+1. 读取当前 page brief；
+2. 读取 page brief 声明的 `active_source`；
+3. 读取 `pending.md` 与 `decisions.md`；
+4. 按 `prompts/delivery-output-handoff.md` active 规则生成交付物；
+5. 若 Copy Coverage 不通过，输出 Copy Coverage Failure Report，不得声称完整交付；
+6. 人工确认；
+7. 归档到 `outputs/handoff/`。
+
+边界：
+
+* 不得将 archive、old output、draft output、`outputs/handoff/_drafts/` 作为事实源；
+* full mode 不得将 active source 中仍有效事实摘要化；
+* 执行命令只提供输入参数、读取范围、输出路径和执行边界，不补充、不替代、不扩展 prompt 规则。
+
+> Test-4 通过 Copy Coverage 验证仅作为 workflow 验证结论，不作为产品事实写入。
 
 产出：
 
@@ -157,7 +168,7 @@
 * `decisions.md` 是已确认判断；
 * `pending.md` 是待确认事项；
 * `sources/` 是原始事实材料；
-* 历史 `sources/*-handoff.md` 保留为 historical source material；
-* 历史 `sources/*-handoff.md` 不迁移、不复制、不重命名；
+* 每个页面的详细事实载体以 page brief frontmatter 的 `active_source` 为准；
 * 新增交付件不得放入 `sources/`；
-* `outputs/handoff/` 是交付物归档层，不作为事实源。
+* `outputs/handoff/` 是交付物归档层，不作为事实源；
+* `outputs/handoff/_drafts/` 仅用于测试草稿，不作为事实源。

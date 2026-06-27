@@ -131,3 +131,26 @@
 * `pending.md` 中仍在“待确认”状态的所有条目；
 * 尚未完成 pending -> page brief -> decisions 闭环的页面细节；
 * 设计待办、研发任务、测试用例、项目排期相关内容。
+
+## 8. Delivery Output Loop Governance Decisions
+
+### BOM-D011
+
+* 编号：BOM-D011
+* 类型：delivery-output-loop-governance
+* 层级：project
+* 状态：active
+
+#### Delivery Output Loop v1.1 Neutral Prompt Baseline
+
+* `projects/bomcase/prompts/delivery-output-handoff.md` v1.1 是当前项目级 Delivery Output Loop active prompt。
+* `delivery-output-handoff.md` 是中立 prompt，不承载页面独有业务事实。
+* 页面独有事实只来自当前 page brief、active source、`pending.md`、`decisions.md`。
+* Delivery Output 生成不得读取 archive、old output、draft output 或 `_drafts/` 作为事实源。
+* Full mode 必须保留 active source 中仍有效的字段、状态、交互、验收口径和用户可见文案颗粒度，不得摘要化。
+* 已确认用户可见文案、info / hover 文案、按钮文案、状态文案、底部汇总文案不得被概括替代。
+* 若 Copy Coverage 不通过，必须输出 Copy Coverage Failure Report，不得声称生成完整交付文档。
+* 执行命令应保持纯净，只提供输入参数、读取范围、输出路径和执行边界，不补充、不替代、不扩展 prompt 规则。
+* 交付正文中，“后端”用于角色 / 责任 / 协作确认；“服务端”用于接口返回 / 配置 / 结算 / 系统判断结果。
+* 待确认 / 待补充项在交付正文中应按“是否阻塞开发启动 / 是否影响验收 / 是否属于后续补充边界”表达，不使用“已登记 / 未登记 / pending / 全局待确认池”等内部管理表达。
+* Test-4 通过 Copy Coverage 验证仅作为 workflow 验证结论，不作为产品事实写入。
