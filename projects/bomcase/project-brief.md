@@ -14,7 +14,7 @@
 |---|---|---|---|---|---|
 | home | `pages/home.md` | `sources/home-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
 | shop | `pages/shop.md` | `sources/shop-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
-| open-box | `pages/open-box.md` | `sources/open-box-handoff.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
+| open-box | `pages/open-box.md` | `sources/open-box.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
 | open-box-result | `pages/open-box-result.md` | `sources/open-box-result-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
 | toy-collection | `pages/toy-collection.md` | `sources/toy-collection-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
 
@@ -59,21 +59,20 @@
 
 ## 7. 当前待确认概况
 
-基于 `pending.md` 当前汇总：
+基于 `pending.md` 当前汇总:
 
-* 总计：16（A:3 / B:13）；
-* Home：2；
-* Shop：0；
-* Open Box：5；
-* Open Box Result：1；
-* Toy Collection：8。
+* 总计:5(A:1 / B:4);
+* Navigation:3;
+* Home:0;
+* Shop:0;
+* Open Box:0;
+* Open Box Result:0;
+* Toy Collection:2。
 
-当前优先关注：
+当前优先关注:
 
-* Home：Banner/导航配置；
-* Open Box：关键交互反馈；
-* Open Box Result：保底奖励到账感知；
-* Toy Collection：筛选/统计边界。
+* Navigation:全局导航路由与登录态入口语义;
+* Toy Collection:收藏完成度取整规则、单卡状态语义边界。
 
 ## 8. 当前关键判断概况
 

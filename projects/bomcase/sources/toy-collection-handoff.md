@@ -1,8 +1,12 @@
 ﻿---
 project: bomcase
-status: confirmed
+page: toy-collection
+type: source
+status: active
+role: detailed_fact_source
 source_type: handoff_document
-last_updated: 2026-06-18
+version: current
+updated: 2026-06-18
 ---
 
 ## 一、页面目标
@@ -900,3 +904,7 @@ last_updated: 2026-06-18
 ## 八、待补充项
 
 暂无。
+
+## Maintenance Log
+
+2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.

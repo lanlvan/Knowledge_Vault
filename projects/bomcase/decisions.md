@@ -18,7 +18,7 @@
 
 * 编号：BOM-D001
 * 原编号：D-005
-* 判断：BOMCASE 已采用 5 个 handoff source 作为页面级一级事实源。
+* 判断：BOMCASE 已采用由 1 个 consolidated active source（`sources/open-box.md`）与 4 个 handoff_document active source 组成的 5 个页面级一级事实源，且均通过 page brief 的 `active_source` 字段引用。
 * 影响范围：页面事实核对、争议回溯与 page brief 更新入口。
 * 状态：active
 
@@ -154,3 +154,25 @@
 * 交付正文中，“后端”用于角色 / 责任 / 协作确认；“服务端”用于接口返回 / 配置 / 结算 / 系统判断结果。
 * 待确认 / 待补充项在交付正文中应按“是否阻塞开发启动 / 是否影响验收 / 是否属于后续补充边界”表达，不使用“已登记 / 未登记 / pending / 全局待确认池”等内部管理表达。
 * Test-4 通过 Copy Coverage 验证仅作为 workflow 验证结论，不作为产品事实写入。
+
+## 9. Source / Brief Object Spec Decisions
+
+### BOM-D013 Source / Brief Object Spec v0.1
+
+* 编号：BOM-D013
+* 类型：source-brief-object-governance
+* 层级：project
+* 原编号：无。该条为本轮新增项目级判断，不从旧 D 编号迁移。
+* 判断：BOMCASE 已新增 `projects/bomcase/specs/source-brief-object-spec.md`，该文件当前为 `status: draft`、`version: v0.1` 的最小对象规范草案，用于约束 page brief 与 active source 的最低对象一致性。
+* 具体口径：
+  * 该规范用于后续维护 page brief / active source 时避免结构漂移；
+  * 该规范不替代 `delivery-output-handoff.md`；
+  * 该规范不替代 `stage-check.md`；
+  * 该规范不作为 Delivery Output 的页面事实源；
+  * 该规范不改变当前 page brief → `active_source` → active source + `pending.md` + `decisions.md` → Delivery Output 的事实读取链路；
+  * 该规范不触发 source 重命名；
+  * 该规范不要求历史 source 立即补正文；
+  * 命名重构、术语统一、表格列结构、archive / output 命名等仍留待 v0.2 或独立任务。
+* 背景 / 来源：`projects/bomcase/specs/source-brief-object-spec.md` v0.1 最小草案已完成创建与校验。
+* 影响范围：BOMCASE page brief 与 active source 的后续维护参考；不扩展为完整工程规范，不改变 Delivery Output 页面事实源边界。
+* 状态：active

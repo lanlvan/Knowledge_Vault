@@ -1,8 +1,12 @@
 ﻿---
 project: bomcase
-status: confirmed
+page: home
+type: source
+status: active
+role: detailed_fact_source
 source_type: handoff_document
-last_updated: 2026-06-18
+version: current
+updated: 2026-06-18
 ---
 
 ## 一、页面目标
@@ -821,3 +825,7 @@ last_updated: 2026-06-18
 |1|Banner|bannerActionType 配置枚举|Banner 点击行为实现|
 |2|Banner|bannerActionValue 配置内容|Banner 跳转实现|
 |3|顶部导航栏|导航路由地址|前端页面跳转|
+
+## Maintenance Log
+
+2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.

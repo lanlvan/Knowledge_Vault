@@ -3,7 +3,7 @@ project: bomcase
 type: page_brief
 status: current
 knowledge_role: handoff-brief
-source: ../sources/shop-handoff.md
+active_source: ../sources/shop-handoff.md
 updated: 2026-06-18
 ---
 

@@ -3,7 +3,7 @@ project: bomcase
 type: page_brief
 status: current
 knowledge_role: handoff-brief
-source: ../sources/toy-collection-handoff.md
+active_source: ../sources/toy-collection-handoff.md
 updated: 2026-06-18
 ---
 
@@ -80,27 +80,16 @@ updated: 2026-06-18
 
 ## 6. 待确认项
 
+当前页面存在待确认项，统一以 `projects/bomcase/pending.md` 为准。
+
+当前关联范围：
+
+* Toy Collection
+
 说明：
 
-以下待确认项与 `projects/bomcase/pending.md` 的 Toy Collection 条目保持一致。  
-本节只承接产品口径待确认，不承接纯视觉、动效、icon 样式或骨架屏视觉规则。
-
-### TC-A001 收藏完成度整数百分比取整规则待确认
-
-* 等级：A
-* 对应 pending：`TC-A001`
-* 当前影响：影响顶部统计展示、埋点统计与跨版本一致性。
-* 待确认产品口径：收藏完成度整数百分比展示时，计算结果应四舍五入、向下取整、向上取整，还是以后端返回值为准。
-
-### TC-B005 单卡状态语义边界待确认
-
-* 等级：B
-* 对应 pending：`TC-B005`
-* 当前影响：影响单卡状态判定一致性和筛选结果可解释性。
-* 待确认产品口径：
-  * “已解锁”和“拥有”的语义边界；
-  * 用户曾经拥有卡牌、但后续兑换或消耗后，页面应归类为“已解锁但未拥有”，还是仍归类为“拥有”；
-  * “隐藏”状态与“未解锁”状态是否互斥，或隐藏款未解锁时是否同时具备两类状态。
+* page brief 不维护 pending 明细；
+* pending 编号、等级、问题描述与处理状态以 `pending.md` 为唯一来源。
 
 ## 7. 与其它页面 / 流程关系
 

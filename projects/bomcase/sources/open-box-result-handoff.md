@@ -1,8 +1,12 @@
 ﻿---
 project: bomcase
-status: confirmed
+page: open-box-result
+type: source
+status: active
+role: detailed_fact_source
 source_type: handoff_document
-last_updated: 2026-06-18
+version: current
+updated: 2026-06-18
 ---
 
 ## 一、页面目标
@@ -369,3 +373,7 @@ last_updated: 2026-06-18
 | --- | ----- | --------------------------------------------------------------- | ------------ | ------------ |
 | 1   | 保底奖励区 | 触发保底时，为保证用户感知奖励已到账，保底奖励区的高亮、轻动效、滚动定位或其它引导方式由 UI 主导设计，并由前端确认实现方式 | UI 视觉设计、前端实现 | UI 主导，前端确认实现 |
 
+
+## Maintenance Log
+
+2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
