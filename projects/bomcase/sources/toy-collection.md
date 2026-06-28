@@ -9,7 +9,15 @@ version: current
 updated: 2026-06-18
 ---
 
-## 一、页面目标
+# Toy Collection Active Source
+
+## 1. Source Scope
+
+本文件是 Toy Collection 页面当前 active source（`source_type: handoff_document`），用于维护页面事实、字段、状态、交互与验收口径。
+
+pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
+
+## 2. Page Goal
 
 该页面用于展示用户潮玩图鉴收藏信息，包括：
 
@@ -32,7 +40,7 @@ updated: 2026-06-18
 
 ---
 
-## 二、页面结构
+## 3. Structure
 
 ### 1. 顶部导航区
 
@@ -209,7 +217,7 @@ updated: 2026-06-18
     
 - 系列支持后台排序配置。
     
-- 与其它筛选不联动。
+- 分类与系列筛选关系以 `projects/bomcase/pending.md` 的 `TC-B006` 为准；确认前不固定联动或不联动规则。
     
 
 补充规则：
@@ -244,7 +252,7 @@ updated: 2026-06-18
         
     - 未拥有。
         
-- 与其它筛选不联动。
+- 拥有状态与分类 / 系列筛选关系以 `projects/bomcase/pending.md` 的 `TC-B007` 为准；确认前不固定 AND / 联动 / 不联动规则。
     
 
 ---
@@ -359,7 +367,7 @@ updated: 2026-06-18
 
 ---
 
-## 三、组件字段
+## 4. Data / Fields
 
 | 区域      | 示例值                         | 说明                                 |
 | ------- | --------------------------- | ---------------------------------- |
@@ -404,7 +412,7 @@ updated: 2026-06-18
 
 ---
 
-## 四、UI 状态与视觉规则
+## 5. States
 
 ### 1. 页面默认状态
 
@@ -660,7 +668,7 @@ updated: 2026-06-18
 
 ---
 
-## 五、交互规则
+## 6. Interactions
 
 ### 1. 分类 Tab 切换
 
@@ -784,7 +792,7 @@ updated: 2026-06-18
 
 ---
 
-## 六、空状态
+### Empty States
 
 | 模块    | 触发条件  | 展示文案     | 是否展示按钮 | 按钮文案  | 点击结果  |
 | ----- | ----- | -------- | ------ | ----- | ----- |
@@ -792,7 +800,13 @@ updated: 2026-06-18
 
 ---
 
-## 七、验收口径
+## 7. Rules
+
+* 规则仅覆盖页面展示规则、筛选展示边界与交互边界。
+* `TC-A001`、`TC-B005`、`TC-B006`、`TC-B007` 在确认前仅作为 pending 边界承接，不写成已确认规则。
+* 示例值用于表达字段形态，不直接固化为完整系统规则。
+
+## 8. Acceptance Criteria
 
 ### 1. 页面结构验收
 
@@ -901,10 +915,21 @@ updated: 2026-06-18
 
 ---
 
-## 八、待补充项
+## 9. Pending Boundary
 
-暂无。
+* `TC-A001`：收藏完成度整数百分比取整规则待确认。
+* `TC-B005`：单卡状态语义边界待确认。
+* `TC-B006`：分类与系列筛选联动关系待确认。
+* `TC-B007`：拥有状态与分类 / 系列筛选联动关系待确认。
 
-## Maintenance Log
+## 10. Non-goals
 
+* 不扩展完整资产、交易、兑换、养成、背包系统规则。
+* 不新增 loading / error / empty / reset 规则。
+* 不把截图示意或示例值写成固定系统规则。
+
+## 11. Maintenance Log
+
+2026-06-28 | pending_boundary_cleanup | Reframed Toy Collection filtering relationship rules as pending boundaries for TC-B006 and TC-B007.
 2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
+2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.

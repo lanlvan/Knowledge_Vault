@@ -1,29 +1,25 @@
 ---
 project: bomcase
 type: spec
-status: draft
-version: v0.1
+status: active
+version: v0.2
 updated: 2026-06-28
-scope: source_brief_object_spec
+scope: unified_schema_v1
 ---
 
 # BOMCASE Source / Brief Object Spec
 
 ## 0. Spec Scope
 
-本规范是 BOMCASE Source / Brief Object Spec v0.1 最小草案。
+本规范是 BOMCASE Source / Brief Object Spec v0.2，当前用于维护 page brief / active source 的 Unified Schema v1 统一骨架。
 
-本规范适用于 BOMCASE 当前 page brief 与 active source 的最小对象结构，只固化当前已经实际跑通的最小对象规则，用于降低后续维护 page brief / source 时的结构漂移风险。
+本规范约束的是统一章节结构、统一事实边界、统一读取路径；不约束页面颗粒度、字段数量、表格列结构、表达密度。
 
-本规范只约束维护对象的最低一致性，不是完整工程规范，不定义完整业务规则，不作为 Delivery Output 的事实源。
+本规范不新增页面产品事实，不替代 `pending.md`、`decisions.md`、`delivery-output-handoff.md`。
 
-本规范不替代 `delivery-output-handoff.md`，不替代 `stage-check.md`，不改变 Loop 2 / Delivery Output 的事实读取链路。
+## 1. Current Object Model and Facts
 
-本规范不触发 source 重命名，不要求历史 source 立即补正文。
-
-## 1. Current Object Model
-
-当前已经跑通的最小对象模型为：
+当前事实模型如下：
 
 ```text
 page brief
@@ -34,19 +30,31 @@ page brief
 → Delivery Output
 ```
 
-page brief 负责页面摘要、页面表达压缩视图与 `active_source` 指针。
+当前已落地状态：
 
-active source 负责页面详细事实，是页面事实核对的主要载体。
+* 5 个 page brief 已统一为 8 段骨架；
+* 5 个 active source 已统一为 11 段骨架；
+* Open Box 不作为结构例外，只作为高复杂度样本；
+* Open Box `source_type` 仍为 `consolidated_source`；
+* Home / Shop / Open Box Result / Toy Collection `source_type` 仍为 `handoff_document`；
+* page brief 是摘要入口；
+* active source 是事实主载体。
 
-`pending.md` 负责待确认明细集中管理。
+## 2. Fact Boundaries
 
-`decisions.md` 负责项目级稳定判断。
+事实边界定义如下：
 
-outputs / drafts 不反向作为事实源，archive 仅用于人工历史回溯，不参与当前 Delivery Output 事实读取。
+* `pending.md` 是唯一未确认事实池；
+* `decisions.md` 是稳定项目判断池；
+* outputs / drafts / archive 不作为当前事实源；
+* Delivery Output 读取事实必须遵循 `page brief -> active source -> pending.md -> decisions.md`；
+* 不允许 brief 固化 pending 明细；
+* 不允许 source 消化 pending 为确定规则；
+* 不允许将 source 扩展为完整后端系统规则库。
 
-## 2. Page Brief Frontmatter Minimum
+## 3. Page Brief Frontmatter Minimum
 
-page brief 当前最小 frontmatter 字段为：
+page brief 最小 frontmatter 字段如下：
 
 ```yaml
 project:
@@ -57,20 +65,15 @@ active_source:
 updated:
 ```
 
-page brief 必须使用 `active_source`，不得回退到旧 `source` 字段。
+约束：
 
-`active_source` 必须指向当前页面唯一 active source。
+* page brief 必须使用 `active_source`，不得回退旧 `source` 字段；
+* `active_source` 必须指向唯一 active source；
+* `knowledge_role` 当前最小集合为 `fact-brief` / `handoff-brief`。
 
-`knowledge_role` 当前允许至少包括：
+## 4. Source Frontmatter Minimum
 
-* `fact-brief`
-* `handoff-brief`
-
-v0.1 不扩展更多 role。
-
-## 3. Source Frontmatter Minimum
-
-source 当前最小 frontmatter 字段为：
+source 最小 frontmatter 字段如下：
 
 ```yaml
 project:
@@ -83,130 +86,100 @@ version: current
 updated:
 ```
 
-`source_type` 当前允许至少包括：
+约束：
 
-* `consolidated_source`
-* `handoff_document`
+* `source_type` 当前允许 `consolidated_source` / `handoff_document`；
+* `source_history` 为条件字段，不是所有 source 必填。
 
-`source_history` 为条件字段，不是所有 source 的必填字段。
+## 5. Unified Schema v1: Page Brief 8 Sections
 
-当 source 发生合并、吸收、替代、重命名等历史事件时，才考虑使用 `source_history`。
+5 个 page brief 必须采用以下一级章节：
 
-历史来源不应只依赖文件名表达，应优先放入 frontmatter、`source_history` 或 Maintenance Log。
-
-## 4. Brief Role Boundary
-
-`fact-brief` 用于已经完成较高事实收敛度的页面 brief。
-
-`handoff-brief` 用于仍以交接文档事实承接为主的页面 brief。
-
-当前 Open Box 是 `fact-brief`。
-
-当前 Home / Shop / Open Box Result / Toy Collection 是 `handoff-brief`。
-
-本规范不要求所有页面立即升级为 `fact-brief`。
-
-`handoff-brief → fact-brief` 的升级条件留到 v0.2 或独立任务，不在 v0.1 拍板。
-
-## 5. Source Content Minimum
-
-成熟 source 推荐覆盖：
-
-* 页面目标；
-* 页面结构；
-* 字段 / 信息项；
-* 状态；
-* 交互；
-* 验收口径；
-* 不覆盖范围；
-* Maintenance Log。
-
-v0.1 不要求历史 source 立即补齐所有章节。
-
-不得把 Open Box 的全部章节强制复制到其它页面。
-
-页面特有结构由页面业务决定。
-
-当前只要求后续新增或大改 source 时，优先向该结构靠拢。
-
-## 6. Page Brief Content Minimum
-
-page brief 推荐保留：
-
-* 页面定位 / 页面目标摘要；
-* active source 指针；
-* 当前确认事实摘要；
-* 与 `pending.md` 的承接关系；
-* 与 `decisions.md` 的相关边界；
-* 不覆盖范围或后续补充边界，如已有。
-
-page brief 不应维护完整字段表。
-
-page brief 不应维护完整状态表。
-
-page brief 不应维护完整交互表。
-
-page brief 不应重复维护 pending 明细。
-
-## 7. Pending / To-be-confirmed Boundary
-
-`pending.md` 是唯一 pending 明细维护池。
-
-page brief 只允许保留 pending 承接说明，不维护 pending 明细。
-
-source 不维护 pending 明细。
-
-`project-brief.md` 只维护 pending 概况，不维护 pending 明细。
-
-source 中可以保留“待补充边界”或“不覆盖范围”，但不得把它等同于 pending 明细。
-
-pending 不应由 Delivery Output 自动反向写入事实层。
-
-## 8. Maintenance Log Minimum
-
-Maintenance Log 当前最小格式为：
-
-```text
-YYYY-MM-DD | change_type | summary
+```markdown
+## 1. Source Policy
+## 2. Page Objective
+## 3. Page Structure Summary
+## 4. Key Product Logic
+## 5. Pending Awareness
+## 6. Decision Boundary
+## 7. Non-goals
+## 8. Maintenance Notes
 ```
 
-Maintenance Log 记录 source / spec 的维护行为。
+章节职责：
 
-Maintenance Log 不用于承载业务规则正文，不替代 `updated` 字段。
+* `Source Policy`：声明 active source 与读取边界；
+* `Page Objective`：页面目标摘要；
+* `Page Structure Summary`：页面结构摘要；
+* `Key Product Logic`：关键规则摘要，不替代 source 表格层；
+* `Pending Awareness`：仅承接 pending 编号与影响，不写明细答案；
+* `Decision Boundary`：承接已确认 decisions 边界；
+* `Non-goals`：明确不覆盖范围；
+* `Maintenance Notes`：维护说明与变更记录摘要。
 
-`updated` 表示业务事实更新时间。
+## 6. Unified Schema v1: Active Source 11 Sections
 
-Maintenance Log 可以记录元数据迁移、结构整理、事实补充等。
+5 个 active source 必须采用以下一级章节：
 
-`change_type` 暂不锁定完整枚举，只要求短标签。
+```markdown
+## 1. Source Scope
+## 2. Page Goal
+## 3. Structure
+## 4. Data / Fields
+## 5. States
+## 6. Interactions
+## 7. Rules
+## 8. Acceptance Criteria
+## 9. Pending Boundary
+## 10. Non-goals
+## 11. Maintenance Log
+```
 
-## 9. v0.1 Non-goals
+章节职责：
 
-v0.1 不处理：
+* `Source Scope`：source 身份、事实范围与读取边界；
+* `Page Goal`：页面目标与范围；
+* `Structure`：页面结构与模块关系；
+* `Data / Fields`：字段与用户可见信息项；
+* `States`：状态与状态差异；
+* `Interactions`：触发条件、动作与结果；
+* `Rules`：跨模块规则与约束；
+* `Acceptance Criteria`：可直接转测试的验收口径；
+* `Pending Boundary`：未确认边界承接，不确认为事实；
+* `Non-goals`：明确不覆盖内容；
+* `Maintenance Log`：维护记录，不承载业务正文。
 
-* source 文件重命名；
-* archive 命名规范；
-* draft output 命名规范；
-* formal output 命名规范；
-* 完整术语统一表；
-* 字段表 / 状态表 / 交互表 / 验收表的完整列结构；
-* source 正文章节强制顺序；
-* 所有 source 立即补正文；
-* `consolidated_source` 与 `handoff_document` 的最终升级路径；
-* 完整规范变更流程。
+## 7. Structure vs Granularity
 
-## 10. v0.1 → v0.2 Upgrade Triggers
+Unified Schema v1 的统一对象是结构，不是颗粒度：
 
-出现以下任一情况时，应考虑进入 v0.2 或拆分独立规范任务：
+* 允许页面复杂度差异；
+* 允许字段数量差异；
+* 允许业务特有子节差异；
+* 不要求其它页面补到 Open Box 同等颗粒度；
+* 不允许因页面复杂度差异破坏一级章节骨架、共通对象命名与事实边界。
 
-* 新增第 6 个 active source；
-* 第 3 个非 Open Box 页面跑通 Delivery Output；
-* 任一 source 出现 v0.1 无法分类的新章节结构；
-* 任一 page brief 出现 v0.1 无法描述的新 frontmatter 字段；
-* 跨页面术语漂移影响 Delivery Output 正确性；
-* 准备执行 source 重命名；
-* 准备系统性补齐 4 个 handoff source 正文颗粒度。
+## 8. v0.1 Relationship
+
+版本关系如下：
+
+* v0.1 是最小对象规范；
+* v0.2 supersedes v0.1；
+* v0.2 反映 2026-06-28 已落地的 Unified Schema v1；
+* v0.1 历史语义保留用于追溯，但当前维护以 v0.2 为准。
+
+## 9. Non-goals
+
+v0.2 不处理：
+
+* 新增页面产品事实；
+* 新增 pending 或确认 pending；
+* 新增 decisions 结论（由 `decisions.md` 维护）；
+* source_type 改型；
+* 把 outputs / drafts / archive 作为事实源；
+* 把 Delivery Output prompt 正文改写进本 spec。
 
 ## Change Log
 
 2026-06-28 | v0.1_initial | Created minimum object spec for BOMCASE page brief and active source maintenance. No existing fact layer files changed.
+2026-06-28 | v0.2_unified_schema_v1 | Upgraded to active Unified Schema v1 maintenance spec with fixed 8-section brief and 11-section source skeleton, boundary rules, and v0.1 supersede relation.

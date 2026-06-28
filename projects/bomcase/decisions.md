@@ -163,7 +163,7 @@
 * 类型：source-brief-object-governance
 * 层级：project
 * 原编号：无。该条为本轮新增项目级判断，不从旧 D 编号迁移。
-* 判断：BOMCASE 已新增 `projects/bomcase/specs/source-brief-object-spec.md`，该文件当前为 `status: draft`、`version: v0.1` 的最小对象规范草案，用于约束 page brief 与 active source 的最低对象一致性。
+* 判断：BOMCASE 已新增 `projects/bomcase/specs/source-brief-object-spec.md`，该文件在 v0.1 阶段作为最小对象规范草案，用于约束 page brief 与 active source 的最低对象一致性。
 * 具体口径：
   * 该规范用于后续维护 page brief / active source 时避免结构漂移；
   * 该规范不替代 `delivery-output-handoff.md`；
@@ -173,6 +173,28 @@
   * 该规范不触发 source 重命名；
   * 该规范不要求历史 source 立即补正文；
   * 命名重构、术语统一、表格列结构、archive / output 命名等仍留待 v0.2 或独立任务。
-* 背景 / 来源：`projects/bomcase/specs/source-brief-object-spec.md` v0.1 最小草案已完成创建与校验。
-* 影响范围：BOMCASE page brief 与 active source 的后续维护参考；不扩展为完整工程规范，不改变 Delivery Output 页面事实源边界。
+* 背景 / 来源：`projects/bomcase/specs/source-brief-object-spec.md` v0.1 最小草案创建与第一轮校验。
+* 影响范围：BOMCASE page brief 与 active source 的最小对象治理起点。
+* superseded_by：BOM-D014
+* 当前口径：当前维护已切换到 `projects/bomcase/specs/source-brief-object-spec.md` `version: v0.2`。
+* 状态：superseded
+
+### BOM-D014 Unified Schema v1 / Source-Brief Object Spec v0.2
+
+* 编号：BOM-D014
+* 类型：source-brief-object-governance
+* 层级：project
+* 原编号：无。该条为本轮新增项目级判断，不从旧 D 编号迁移。
+* 判断：BOMCASE Unified Schema v1 / `source-brief-object-spec.md` v0.2 成为当前 page brief 与 active source 的统一维护骨架。
+* 适用范围：5 个 page brief + 5 个 active source。
+* 具体口径：
+  * brief 统一为 8 段骨架，source 统一为 11 段骨架；
+  * Open Box 不作为结构例外，只作为高复杂度样本；
+  * source_type 保持差异：Open Box 为 `consolidated_source`，Home / Shop / Open Box Result / Toy Collection 为 `handoff_document`；
+  * 统一结构不等于统一颗粒度，不要求其它页面补到 Open Box 颗粒度；
+  * `pending.md` 仍是唯一未确认事实池，`decisions.md` 仍是稳定项目判断池；
+  * outputs / drafts / archive 不作为当前事实源；
+  * Delivery Output 事实读取继续遵循 `page brief -> active source -> pending.md -> decisions.md`。
+* 背景 / 来源：Unified Schema v1 在 5 页 brief/source 骨架已落地，v0.1 与当前事实层发生脱节，需要以 v0.2 固化当前维护口径。
+* 影响范围：BOMCASE 后续 brief/source 维护、结构对齐与事实读取边界解释。
 * 状态：active

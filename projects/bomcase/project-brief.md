@@ -12,11 +12,11 @@
 
 | 页面 | 当前 page brief | 当前 source | status | knowledge_role | 说明 |
 |---|---|---|---|---|---|
-| home | `pages/home.md` | `sources/home-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
-| shop | `pages/shop.md` | `sources/shop-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
+| home | `pages/home.md` | `sources/home.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
+| shop | `pages/shop.md` | `sources/shop.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
 | open-box | `pages/open-box.md` | `sources/open-box.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
-| open-box-result | `pages/open-box-result.md` | `sources/open-box-result-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
-| toy-collection | `pages/toy-collection.md` | `sources/toy-collection-handoff.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
+| open-box-result | `pages/open-box-result.md` | `sources/open-box-result.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
+| toy-collection | `pages/toy-collection.md` | `sources/toy-collection.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
 
 ## 3. 当前资料状态
 
@@ -61,18 +61,18 @@
 
 基于 `pending.md` 当前汇总:
 
-* 总计:5(A:1 / B:4);
-* Navigation:3;
-* Home:0;
-* Shop:0;
-* Open Box:0;
-* Open Box Result:0;
-* Toy Collection:2。
+* 总计:8(A:1 / B:7 / C:0);
+* Navigation:4(A:0 / B:4);
+* Home:0(A:0 / B:0);
+* Shop:0(A:0 / B:0);
+* Open Box:0(A:0 / B:0);
+* Open Box Result:0(A:0 / B:0);
+* Toy Collection:4(A:1 / B:3)。
 
 当前优先关注:
 
-* Navigation:全局导航路由与登录态入口语义;
-* Toy Collection:收藏完成度取整规则、单卡状态语义边界。
+* Navigation:全局导航路由、登录态入口语义与首页默认高亮口径;
+* Toy Collection:收藏完成度取整规则、单卡状态语义边界与筛选联动口径。
 
 ## 8. 当前关键判断概况
 
@@ -84,7 +84,7 @@
 * pages 下文件是当前可读页面层，page brief 按 `knowledge_role` 区分 `fact-brief` 与 `handoff-brief`；
 * `open-box.md` 当前为 `fact-brief`；`home.md`、`shop.md`、`open-box-result.md`、`toy-collection.md` 当前为 `handoff-brief`；
 * `handoff-brief` 用于研发交接、页面理解和待确认承接，不等同于事实源，也不替代 `sources/*`；
-* 事实争议或核对场景仍回到 `sources/*-handoff.md`；
+* 事实争议或核对场景仍回到 `sources/*.md`；
 * 页面表达不替代完整业务规则。
 
 ## 9. 不覆盖范围

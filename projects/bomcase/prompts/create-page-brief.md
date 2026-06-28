@@ -17,7 +17,7 @@
 
 输入：
 
-* source path（示例：`F:\Knowledge_Vault\projects\bomcase\sources\home-handoff.md`）
+* source path（示例：`F:\Knowledge_Vault\projects\bomcase\sources\home.md`）
 * 相关页面已有 page brief path（如存在）
 * pending / decisions 关联 path（如存在）
 * output page brief path（示例：`F:\Knowledge_Vault\projects\bomcase\pages\home.md`）

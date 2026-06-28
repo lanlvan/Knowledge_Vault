@@ -3,114 +3,57 @@ project: bomcase
 type: page_brief
 status: current
 knowledge_role: handoff-brief
-active_source: ../sources/home-handoff.md
-updated: 2026-06-18
+active_source: ../sources/home.md
+updated: 2026-06-28
 ---
 
 # Home Page Brief
 
-## 1. 来源
+## 1. Source Policy
 
-* 当前 source：`../sources/home-handoff.md`
-* 如需核对事实，以对应 source 为准；
-* 本文件是工作摘要，不替代 source；
-* README/index 不作为事实源。
+* 本 brief 是首页摘要入口，不替代 `../sources/home.md`。
+* 页面事实、字段、状态、交互与文案以 active source 为准。
+* Delivery Output 读取链路保持 `page brief -> active source -> pending -> decisions`。
 
-## 2. 页面目标
+## 2. Page Objective
 
-首页用于承接活动展示、商品与权益入口、流程说明和信任背书信息，帮助用户完成从浏览到进入商品详情/下单入口的页面理解。
+首页用于承接活动主视觉、商品入口、军需权益信息和信任说明，支持用户从浏览进入商品详情与下单流程。
 
-基于当前 source，首页目标聚焦：
+## 3. Page Structure Summary
 
-* 展示 Banner 活动、热门掉落、可获军需权益、热门商品与赠品信息；
-* 提供玩法流程、支付后说明、安心购物与概率公示入口；
-* 承接“浏览活动 -> 了解商品与权益 -> 进入详情/下单”的入口链路。
+* 顶部全局导航；
+* 三栏首屏（左侧热门掉落 / 中部 Banner + 流程 / 右侧权益与说明）；
+* 热门商品区（商品卡片、赠品、CTA）；
+* 安心购物与底部信任背书（含概率公示入口）。
 
-## 3. 页面结构
+## 4. Key Product Logic
 
-首页结构按已确认页面表达可压缩为：
+* Banner 为管理端配置项，Banner 内容全部为图片，最多支持 3 张，支持自动轮播与手动切换。
+* Banner 点击行为由管理端配置结果决定，首页侧不固化固定点击枚举。
+* Header 使用全局导航能力，不在本页补登录态、头像点击、“我的盒柜”规则。
+* 不固定导航路由，不固定首页默认高亮为「Bomcase」或「商城」。
+* 用户可见文案口径保持 source 原文，包括活动与信任表达（如“买实体盲盒送军需权益”“下单后在线拆盒，并获赠军需权益”“100%必得军需权益”“点击查看概率公示”）。
 
-* Header（使用 BOMCASE 全局导航，入口与登录态状态以 `projects/bomcase/global-navigation.md` 为准）；
-* 三栏首屏：左侧热门掉落 / 中部 Banner + 流程 / 右侧权益与说明；
-* Banner（图片型活动位，支持轮播与手动切换）；
-* 热门商品（标题、标签、查看更多、商品卡片、赠品与 CTA）；
-* 安心购物（官方正品、专业速运、安全支付、专属客服）；
-* 规则提示与信任背书（军需必中、时效提示、公平透明、概率公示入口）。
+## 5. Pending Awareness
 
-## 4. 核心表达
+* `NAV-B001`：影响首页及全站导航路由映射，确认前不固定具体路由。
+* `NAV-B004`：影响首页默认导航高亮，确认前不固定「Bomcase」或「商城」。
+* `NAV-B002`、`NAV-B003`：属于全局导航边界，首页仅承接，不在 brief 内确认答案。
 
-首页的关键表达口径是“买实体盲盒 + 在线拆盒 + 实物发货 + 军需权益加赠”的统一展示：
+## 6. Decision Boundary
 
-* 选购实体盲盒；
-* 在线拆盒，实体发货；
-* 赠送军需权益，并承接到军需相关入口；
-* 商品入口与军需权益展示在同页协同出现；
-* 通过流程说明与信任提示降低理解门槛。
+* 承接 `BOM-D007`：本页为 `handoff-brief`，用于交接与理解，不替代 source。
+* 承接 `BOM-D009`：Banner 点击行为由配置结果驱动，brief 不定义固定行为枚举。
+* 承接 `BOM-D010`：截图仅示意，验收以规则与 source 事实为准。
 
-本节仅保留页面表达，不扩展为完整业务规则。
+## 7. Non-goals
 
-## 5. 关键页面判断
+* 不覆盖支付、库存、订单、发货、资产、权益到账、结算等完整系统规则。
+* 不补全全局导航已有能力内部规则。
+* 不承接 source 未确认事实，不把 pending 写成已确认事实。
 
-基于当前 source，首页可保留的关键页面判断为：
+## 8. Maintenance Notes
 
-* 首页是“活动主视觉 + 商品转化入口 + 信任说明”的组合页；
-* 三栏首屏中，中部 Banner 为主视觉，左侧掉落与右侧权益/说明作为辅助承接；
-* Banner 为配置驱动的图片型展示位，首页按配置结果执行点击行为；
-* 首页侧不定义 Banner 固定行为枚举；
-* Header 使用 BOMCASE 全局导航，入口与登录态状态以 `projects/bomcase/global-navigation.md` 为准；
-* 商品区以入口表达为主（详情/下单入口、赠品选择），不在首页展开完整商品与交易规则；
-* 流程说明、支付后说明、安心购物和底部信任背书属于固定说明块；
-* README 仅作导航，不作为事实源。
-
-## 6. 待确认项
-
-说明：
-
-以下待确认项与 `projects/bomcase/pending.md` 保持一致。  
-本节只承接产品口径待确认，不承接纯视觉、动效、icon 样式、研发任务或测试用例。
-
-* 当前无明确待确认项。
-
-## 7. 与其它页面 / 流程关系
-
-首页与其它页面/流程的承接关系（仅页面表达层）：
-
-* “查看全部（军需权益）”承接到军需页面；
-* 商品图片/标题承接到商品详情页；
-* 商品 CTA 承接到下单流程；
-* 概率公示入口承接到已有概率公示弹窗能力；
-* 首页作为商城页内核心入口页，与开箱/军需玩法通过流程与权益表达形成前台承接。
-
-本节不定义支付、库存、发货、资产或权益结算规则。
-
-## 8. 来自 V1 rules 的压缩内容
-
-本 brief 参考并压缩了以下 V1 文件内容：
-
-* `page-goal.md`
-* `hero-banner-rule.md`
-* `three-column-first-screen-rule.md`
-* `product-section-rule.md`
-* `trust-and-flow-rule.md`
-* `visual-boundary-rule.md`
-* `README.md`
-
-这些内容已压缩为单一 page brief，不在当前主工作台中照搬 rule 文件拆分结构。
-
-## 9. 不覆盖范围
-
-本 brief 明确不覆盖：
-
-* 支付规则；
-* 库存规则；
-* 发货履约规则；
-* 军需权益结算规则；
-* 完整资产/订单/会员/活动系统规则；
-* source 未确认事实。
-
-## 10. 后续注意
-
-后续迭代时建议：
-
-* 若首页入口、Banner 行为、商品承接关系变化，需同步更新本 brief；
-* 若涉及权益、支付、订单、发货、资产等规则，应另行确认范围，不直接写入页面 brief。
+* 本 brief 只维护首页摘要、读取路径与边界，不维护完整字段表/状态表/交互表。
+* 如首页结构或入口关系变更，先更新 active source，再回写本 brief 摘要。
+* 2026-06-28 | schema_migration | Migrated brief structure to BOMCASE Unified Schema v1 without changing product facts.

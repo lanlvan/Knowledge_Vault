@@ -71,3 +71,24 @@
 - `expression_cleanup`：事实表达净化，不改变产品规则
 - `supplement_add`：新增待补充边界
 - `pending_candidate`：待确认候选，不直接写入 source
+
+## Bootstrap-only Change Type
+
+`initial_creation` is reserved for `page-fact-layer-bootstrap.md`.
+
+It is used only when initializing a new page fact layer from raw material:
+
+```text
+YYYY-MM-DD | initial_creation | Initialized active source and page brief from raw material. Pending and decision candidates listed separately. No Delivery Output generated.
+```
+
+This type is not part of the normal `source-maintenance.md` fact patch workflow.
+
+Regular source maintenance should continue to use:
+
+* `confirmed_fact_add`
+* `confirmed_fact_fix`
+* `confirmed_fact_remove`
+* `expression_cleanup`
+* `supplement_add`
+* `pending_candidate`

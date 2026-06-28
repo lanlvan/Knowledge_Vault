@@ -14,7 +14,9 @@ source_history:
     note: Historical material absorbed or superseded by current source.
 ---
 
-## Source History
+# Open Box Active Source
+
+## 1. Source Scope
 
 * 本文件是 Open Box 当前唯一 active source。
 * 当前事实主体吸收自 `open-box-handoff-v1.3.md`。
@@ -23,7 +25,7 @@ source_history:
 * Delivery Output 应读取 `pages/open-box.md` 指向的本文件。
 
 
-## 版本说明
+### Version Notes
 
 | 版本   | 说明                                                                             |
 | ---- | ------------------------------------------------------------------------------ |
@@ -36,7 +38,7 @@ source_history:
 
 ---
 
-## 一、页面目标
+## 2. Page Goal
 
 > 本模块说明：页面目标定义开箱页三栏职责，核心是左侧总览、中间判断、右侧选卡，不互相替代。
 
@@ -72,7 +74,7 @@ source_history:
 
 ---
 
-## 二、研发影响标记
+### R&D Boundary Notes
 
 本次文档大部分内容为 UI / 前端展示与交互调整。
 
@@ -107,7 +109,7 @@ source_history:
     
 5. 「九、验收口径」→「2. 字段展示验收」「3. 状态验收」「6. 范围控制验收」；
     
-6. 「十、待补充项」→ 保底相关与能量溢出相关待确认项。
+6. 「十、待补充项」→ 保底相关待补充项。
     
 
 ### 3. 不作为后端改动依据的内容
@@ -150,7 +152,7 @@ source_history:
 
 ---
 
-## 三、页面结构
+## 3. Structure
 
 ### 1. 顶部导航区域
 
@@ -279,7 +281,7 @@ source_history:
 
 ---
 
-## 四、组件字段
+## 4. Data / Fields
 
 |区域|字段 / 示例值|说明|
 |---|---|---|
@@ -358,7 +360,7 @@ source_history:
 
 ---
 
-## 五、核心口径说明
+### Rule Notes (Detailed)
 
 ### 1. 卡牌数量口径
 
@@ -529,7 +531,7 @@ X1 / X5 为开启次数选择。
 
 ---
 
-## 六、UI 状态与视觉规则
+## 5. States
 
 颜色、icon、动效、字号、布局位置等具体视觉实现以最终设计稿为准；本文只确认状态识别、层级区分和推荐权重。
 
@@ -1158,7 +1160,7 @@ info 内容用于前台规则说明，不替代后端实际结算规则；实际
 
 ---
 
-## 七、交互规则
+## 6. Interactions
 
 ### 1. 左侧资源概览
 
@@ -1314,7 +1316,15 @@ info 内容用于前台规则说明，不替代后端实际结算规则；实际
 
 ---
 
-## 八、空状态
+## 7. Rules
+
+* 本页 Rules 仅承接页面表达规则、展示规则、交互边界和验收边界。
+* 保底模块以前端表达为主，最终结果以后端返回为准。
+* `溢出 +Y% 存入能量余额` 为已确认页面表达，不扩展完整系统计算规则。
+* X1 / X5 切换清空已选卡牌并重算状态，且清空溢出提示。
+* 不处理 Open Box / Open Box Result 跨页术语关系。
+
+### Empty States
 
 ### 1. 右侧卡牌背包无卡牌状态
 
@@ -1366,7 +1376,7 @@ info 内容用于前台规则说明，不替代后端实际结算规则；实际
 
 ---
 
-## 九、验收口径
+## 8. Acceptance Criteria
 
 ### 1. 页面结构验收
 
@@ -1653,9 +1663,9 @@ info 内容用于前台规则说明，不替代后端实际结算规则；实际
 
 ---
 
-## 十、待补充项
+## 9. Pending Boundary
 
-`pending.md` 中 Open Box 当前无已登记产品待确认项。本节待补充项表示当前 source 保留的后续补充边界，不等同于 `pending.md` 中的产品待确认项；未补充前不得按确定规则开发或验收。
+`pending.md` 中 Open Box 当前无已登记产品待确认项。本节待补充项表示当前 source 保留的后续补充边界，不等同于 `pending.md` 中的产品待确认项；下列待补充项未补充前不得按确定规则开发或验收。
 
 |编号|所属区域|待补充内容|影响范围|归属调整|
 |---|---|---|---|---|
@@ -1664,9 +1674,16 @@ info 内容用于前台规则说明，不替代后端实际结算规则；实际
 |3|保底范围饰品标记|保底标记 icon 的具体样式|UI 视觉设计、前端资源|UI 主导，前端确认实现|
 |4|保底进度模块|保底 info 的展示位置、宽度、样式与动效细节|UI 交互、前端实现|UI 主导，前端确认实现|
 |5|保底进度模块 / 结果态|触发保底 / 获得保底范围饰品后的结果态展示时长、消失方式、是否有过渡动效|UI 交互、前端实现、结果态验收|产品确认展示规则，UI / 前端承接|
-|6|右侧卡牌背包 / 底部固定汇总区|本次填充能量溢出值 Y% 的返回来源、刷新时机与精度展示规则|字段展示、前端状态刷新、研发确认|产品确认展示口径，研发确认数据来源，前端承接展示|
 
-## Maintenance Log
+## 10. Non-goals
 
+* 不补完整资源扣减、库存、订单、支付、发货、资产、权益到账、结算、交易、钱包系统规则。
+* 不把 source 示例值写成固定系统规则。
+* 不把待补充边界写成已确认产品事实。
+
+## 11. Maintenance Log
+
+2026-06-28 | confirmed_boundary_cleanup | Removed stale pending boundary for confirmed overflow energy source, refresh timing, and integer display rules.
 2026-06-27 | confirmed_fact_add | 补充资源构成 icon 单资源场景完整文案规则；确认右侧卡牌背包全展开态底部文案已覆盖未选卡与已选卡状态。
 2026-06-27 | confirmed_fact_add | 补充即将过期能量 hover 文案；保留现有资源消耗优先级边界。
+2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.

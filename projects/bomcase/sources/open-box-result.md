@@ -9,7 +9,15 @@ version: current
 updated: 2026-06-18
 ---
 
-## 一、页面目标
+# Open Box Result Active Source
+
+## 1. Source Scope
+
+本文件是 Open Box Result 页面当前 active source（`source_type: handoff_document`），用于维护页面事实、字段、状态、交互与验收口径。
+
+页面展示以后端结算结果为准，本文件不替代完整结算系统规则。
+
+## 2. Page Goal
 
 本页面为军需箱开箱完成后的结果反馈页，用于在后端完成本次开启结算后，展示用户本次正常掉落饰品，并补充呈现本次结算产生的保底状态、额外保底奖励与水晶能量沉淀提示。
 
@@ -25,7 +33,7 @@ updated: 2026-06-18
 
 ---
 
-## 二、页面结构
+## 3. Structure
 
 ### 1. 结果页整体结构
 
@@ -96,7 +104,7 @@ updated: 2026-06-18
 
 ---
 
-## 三、UI 展示字段
+## 4. Data / Fields
 
 |区域|示例值|说明|
 |---|---|---|
@@ -115,7 +123,7 @@ updated: 2026-06-18
 
 ---
 
-## 四、UI 状态与视觉规则
+## 5. States
 
 ### 1. 默认展示规则
 
@@ -188,7 +196,7 @@ updated: 2026-06-18
 
 ---
 
-## 五、状态文案
+### 状态文案
 
 |状态|触发条件|前台展示文案|展示说明|
 |---|---|---|---|
@@ -206,7 +214,7 @@ updated: 2026-06-18
 
 ---
 
-## 六、交互规则
+## 6. Interactions
 
 ### 1. 结果页顶部保底反馈
 
@@ -275,7 +283,7 @@ updated: 2026-06-18
 
 ---
 
-## 七、空状态
+### Empty States
 
 本次新增模块的空状态按以下规则处理。
 
@@ -289,7 +297,13 @@ updated: 2026-06-18
 
 ---
 
-## 八、验收口径
+## 7. Rules
+
+* 规则仅覆盖结果页展示规则、状态文案规则与交互边界。
+* 保底奖励不混入正常掉落卡片，且不作为第 6 张普通掉落卡片。
+* 水晶提示只表达本次沉淀结果，不扩展完整资产与结算规则。
+
+## 8. Acceptance Criteria
 
 ### 1. 页面结构验收
 
@@ -367,13 +381,23 @@ updated: 2026-06-18
 
 ---
 
-## 九、待补充项
+## 9. Pending Boundary
+
+* 当前 `pending.md` 中 Open Box Result 无已登记 pending 编号。
+* 以下内容为 source 保留的待补充实现边界，不等同 pending 明细，不作为已确认事实。
 
 | 编号  | 所属区域  | 待补充内容                                                           | 影响范围         | 归属调整         |
 | --- | ----- | --------------------------------------------------------------- | ------------ | ------------ |
 | 1   | 保底奖励区 | 触发保底时，为保证用户感知奖励已到账，保底奖励区的高亮、轻动效、滚动定位或其它引导方式由 UI 主导设计，并由前端确认实现方式 | UI 视觉设计、前端实现 | UI 主导，前端确认实现 |
 
 
-## Maintenance Log
+## 10. Non-goals
+
+* 不扩展完整保底计算、奖励发放链路、资产入账、钱包、发货规则。
+* 不处理“能量余额 / 水晶 / 水晶能量”跨页术语关系。
+* 不把 UI / 动效待补充项写成确定系统规则。
+
+## 11. Maintenance Log
 
 2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
+2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.
