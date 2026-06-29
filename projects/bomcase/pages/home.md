@@ -4,7 +4,7 @@ type: page_brief
 status: current
 knowledge_role: handoff-brief
 active_source: ../sources/home.md
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Home Page Brief
@@ -31,14 +31,12 @@ updated: 2026-06-28
 * Banner 为管理端配置项，Banner 内容全部为图片，最多支持 3 张，支持自动轮播与手动切换。
 * Banner 点击行为由管理端配置结果决定，首页侧不固化固定点击枚举。
 * Header 使用全局导航能力，不在本页补登录态、头像点击、“我的盒柜”规则。
-* 不固定导航路由，不固定首页默认高亮为「Bomcase」或「商城」。
+* 不固定导航路由；首页默认导航高亮显示为「Bomcase」。
 * 用户可见文案口径保持 source 原文，包括活动与信任表达（如“买实体盲盒送军需权益”“下单后在线拆盒，并获赠军需权益”“100%必得军需权益”“点击查看概率公示”）。
 
 ## 5. Pending Awareness
 
 * `NAV-B001`：影响首页及全站导航路由映射，确认前不固定具体路由。
-* `NAV-B004`：影响首页默认导航高亮，确认前不固定「Bomcase」或「商城」。
-* `NAV-B002`、`NAV-B003`：属于全局导航边界，首页仅承接，不在 brief 内确认答案。
 
 ## 6. Decision Boundary
 

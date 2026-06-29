@@ -29,6 +29,27 @@ Purpose: Generate delivery handoff documents from current BOMCASE Knowledge Vaul
 
 ---
 
+## Execution Stages
+
+Delivery output generation follows four delivery stages:
+
+1. Readiness Check:
+   verify page brief, active source, pending, decisions, and required global facts are readable and consistent.
+
+2. Generation Plan:
+   confirm output mode, target audience, scope, version, and output path.
+
+3. Generate Output:
+   generate only the Delivery Output document.
+
+4. Copy Coverage / Boundary Check:
+   verify required copy and fact coverage.
+   If Copy Coverage fails, output a Copy Coverage Failure Report instead of claiming a complete handoff.
+
+This prompt must not maintain, repair, or infer the fact layer. If the fact layer is incomplete or inconsistent, route the issue back to `page-fact-update-loop.md`, `page-fact-layer-bootstrap.md`, or `pending-update-loop.md` as appropriate.
+
+---
+
 ## 2. Required Inputs
 
 使用本 Prompt 前，必须提供或确认以下信息：

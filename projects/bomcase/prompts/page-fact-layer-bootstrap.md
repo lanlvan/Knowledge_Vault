@@ -1,7 +1,7 @@
 ---
 project: bomcase
 type: prompt
-status: draft
+status: active
 version: v0.1
 role: page_fact_layer_bootstrap
 schema_basis: source-brief-object-spec.md v0.2
@@ -44,12 +44,16 @@ This prompt has a distinct responsibility from existing prompts:
 | Prompt                         | Responsibility                                                                              |
 | ------------------------------ | ------------------------------------------------------------------------------------------- |
 | `page-fact-layer-bootstrap.md` | Initializes a complete page fact layer from raw materials: source + page brief + candidates |
-| `create-page-brief.md`         | Creates or updates a page brief for an already existing active source                       |
-| `source-maintenance.md`        | Applies controlled fact patches to an existing active source                                |
+| `page-fact-update-loop.md`     | Incrementally updates an existing page fact layer from unrouted page material               |
+| `pending-update-loop.md`       | Processes existing pending ID confirmation results and the pending closure loop             |
 | `delivery-output-handoff.md`   | Generates delivery handoff output based on page brief + active source + pending + decisions |
 | `stage-check.md`               | Performs read-only project structure and governance checks                                  |
 
-This prompt must not replace `delivery-output-handoff.md`, `source-maintenance.md`, or `create-page-brief.md`.
+This prompt must not replace `page-fact-update-loop.md`, `pending-update-loop.md`, or `delivery-output-handoff.md`.
+
+Use `page-fact-update-loop.md` for daily incremental updates to an already existing page fact layer.
+
+Keep this prompt focused on new page initialization or page fact-layer reconstruction from raw material.
 
 ---
 
@@ -74,6 +78,47 @@ Layer responsibilities:
 | `outputs/**`                 | Delivery results / drafts              | Never used as fact source         |
 | README / index               | Navigation only                        | Never used as fact source         |
 | archived / superseded source | Historical trace only                  | Never used as current fact source |
+
+---
+
+## Execution Stages
+
+Bootstrap / reconstruction must not start by directly creating or updating files.
+
+Use four stages by default:
+
+1. Pre-check / read-only validation:
+   - read raw material paths;
+   - verify target source and page brief paths;
+   - verify schema authority;
+   - check forbidden fact sources;
+   - check whether raw material is sufficient;
+   - check whether existing page facts may be overwritten or reconstructed.
+
+2. Write Plan:
+   - output whether the task is initial creation or reconstruction;
+   - list target files;
+   - list proposed source sections;
+   - list proposed page brief sections;
+   - list pending candidates;
+   - list decision candidates;
+   - list Fact Gaps;
+   - state whether it is safe to write.
+
+3. Apply Patch:
+   - create or update only allowed files;
+   - use minimal patch when updating existing files;
+   - do not overwrite existing fact layers unless reconstruction is explicitly in scope;
+   - do not invent missing facts.
+
+4. Post-check:
+   - run Delivery Readiness Criteria;
+   - verify active source frontmatter;
+   - verify page brief `active_source`;
+   - verify pending / decision candidates are separated from confirmed facts;
+   - verify no Delivery Output was generated.
+
+If pre-check or write plan fails, output a Fact Gap Report or Bootstrap Write Plan and do not create / update source or page brief.
 
 ---
 
@@ -456,7 +501,7 @@ YYYY-MM-DD | initial_creation | Initialized active source and page brief from ra
 
 `initial_creation` is introduced only for the `page-fact-layer-bootstrap` workflow.
 
-It is not part of the normal `source-maintenance.md` fact patch workflow.
+It is not part of the normal `page-fact-update-loop.md` incremental update workflow.
 
 For later maintenance, use the existing fact patch change types such as:
 
@@ -565,7 +610,7 @@ Must not:
 Use the following input format when running this prompt:
 
 ```text
-当前任务：使用 `projects/bomcase/prompts/page-fact-layer-bootstrap.md` 从原始页面材料初始化 / 更新页面事实层。
+当前任务：使用 `projects/bomcase/prompts/page-fact-layer-bootstrap.md` 从原始页面材料初始化 / 重建页面事实层。
 
 页面名称：
 页面展示名称：

@@ -6,7 +6,7 @@ status: active
 role: detailed_fact_source
 source_type: handoff_document
 version: current
-updated: 2026-06-18
+updated: 2026-06-29
 ---
 
 # Home Active Source
@@ -98,7 +98,7 @@ updated: 2026-06-18
 
 已确认说明：
 
-- Home 默认导航高亮口径以 `pending.md` 的 `NAV-B004` 为准；确认前不固定为「Bomcase」或「商城」。
+- Home 默认导航高亮显示为「Bomcase」。
     
 
 已有功能，本次不展开：
@@ -493,7 +493,7 @@ updated: 2026-06-18
 
 |区域|字段名|类型|示例值|说明|
 |---|---|---|---|---|
-|顶部导航栏|navName|string|商城|导航名称|
+|顶部导航栏|navName|string|Bomcase|首页默认高亮导航名称|
 |顶部导航栏|isActive|boolean|true|当前导航是否高亮|
 |顶部导航栏|navPath|url|【待接路由】|导航跳转地址|
 |左侧热门掉落|tabName|string|热门掉落|Tab 名称|
@@ -535,7 +535,7 @@ updated: 2026-06-18
 
 ### 1. 导航栏
 
-- 当前页导航高亮：确认前不固定具体口径，见 `NAV-B004`；
+- 当前页导航高亮显示为「Bomcase」；
     
 - 页面右侧显示「登录 / 注册」。
     
@@ -719,7 +719,7 @@ updated: 2026-06-18
 
 * 页面规则仅承接展示规则、状态规则与交互边界，不扩展完整系统规则。
 * Banner 点击行为按配置结果执行，不在页面侧固化行为枚举。
-* 导航路由与默认高亮口径在 pending 未确认前不固定。
+* 导航路由在 pending 未确认前不固定；首页默认导航高亮显示为「Bomcase」。
 * 页面事实以 active source 为准，示例值不等同固定后端规则。
 
 ## 8. Acceptance Criteria
@@ -774,7 +774,7 @@ updated: 2026-06-18
 
 ### 3. 状态验收
 
-- 默认高亮：待确认，见 `NAV-B004`；
+- 默认高亮显示为「Bomcase」；
     
 - 默认选中「热门掉落」；
     
@@ -836,8 +836,6 @@ updated: 2026-06-18
 ## 9. Pending Boundary
 
 * `NAV-B001`：影响顶部导航入口路由映射；确认前不固定具体 URL。
-* `NAV-B004`：影响首页默认导航高亮口径；确认前不固定「Bomcase」或「商城」。
-* `NAV-B002`、`NAV-B003`：影响头像点击与“我的盒柜”边界；本页仅承接全局导航边界，不在本文件确认答案。
 
 ## 10. Non-goals
 

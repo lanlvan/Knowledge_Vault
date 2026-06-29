@@ -4,8 +4,10 @@
 
 | Prompt | Role | Status |
 |---|---|---|
+| `page-fact-layer-bootstrap.md` | Initialize or reconstruct a page fact layer from raw material | active |
+| `page-fact-update-loop.md` | Incrementally update an existing page fact layer from unrouted page material | active |
+| `pending-update-loop.md` | Process existing pending ID confirmation results and local consistency checks | active |
 | `delivery-output-handoff.md` | Generate delivery handoff documents from current page facts | active |
-| `source-maintenance.md` | Apply confirmed Fact Patch into target active source | active |
 
 ## Draft / Supporting Prompts
 
@@ -13,10 +15,60 @@ This section documents non-active or supporting prompt capabilities to avoid rol
 
 | Prompt | Status | Role | Boundary |
 |---|---|---|---|
-| `page-fact-layer-bootstrap.md` | draft | Initialize new page fact layer from raw material: `raw material -> active source -> page brief -> pending candidates -> decision candidates -> bootstrap report` | Does not generate Delivery Output; does not modify `pending.md` / `decisions.md`; bootstrap report is not a fact source; keep as draft until real new-page validation |
-| `create-page-brief.md` | supporting | Existing active source -> generate or update one page brief | Does not replace active source; does not auto-confirm new facts |
 | `stage-check.md` | supporting | Read-only structure and governance checks | Does not auto-fix or modify project files |
-| `source-maintenance.md` | active (see Active Prompts) | Controlled fact patch maintenance for existing active source | Listed in Active Prompts table; not duplicated as a draft capability |
+
+## Execution Discipline
+
+BOMCASE fact-layer maintenance prompts must be executed in four stages by default:
+
+1. Pre-check / read-only validation;
+2. Write Plan / proposed changes and target files;
+3. Apply Patch / minimal patch execution;
+4. Post-check / local consistency validation.
+
+This applies to:
+
+- `page-fact-layer-bootstrap.md`
+- `page-fact-update-loop.md`
+- `pending-update-loop.md`
+
+Do not skip directly to patching unless the command explicitly says the pre-check and write plan have already passed.
+
+`delivery-output-handoff.md` follows a related delivery flow:
+
+1. readiness check;
+2. generation plan;
+3. output generation;
+4. Copy Coverage / boundary check.
+
+Delivery output generation must not maintain or repair the fact layer. If facts are incomplete or inconsistent, route the issue back to the relevant fact-layer maintenance prompt.
+
+### Delivery Output Execution Note
+
+`delivery-output-handoff.md` may be executed through a single clean execution command when the command only provides input parameters, required reading scope, output path, and execution boundaries.
+
+Delivery output is not a fact-layer maintenance flow and is not required to be split into multiple independent commands by default. The single execution command must still rely on `delivery-output-handoff.md` internal gates, including readiness, source dependency, knowledge update, Copy Coverage, and boundary checks.
+
+If any gate fails, generation must stop and the issue must return to the appropriate fact-layer maintenance prompt.
+
+## User-Facing Prompt Classification
+
+BOMCASE user-facing prompts are classified by input material state, not by target file.
+
+Do not ask the user to choose a prompt based on whether a change should write `sources/*.md`, `pages/*.md`, `pending.md`, or `decisions.md`.
+
+Use the following routing:
+
+| Input material state | Prompt | Result |
+|---|---|---|
+| New page material, or existing page fact-layer reconstruction from raw material | `page-fact-layer-bootstrap.md` | Creates / updates source + page brief and outputs pending / decision candidates in bootstrap report |
+| Existing page incremental fact update from unrouted page material | `page-fact-update-loop.md` | Reads current fact layer, routes source / brief writes, outputs pending / decision candidates by default |
+| Existing pending ID receives a confirmation result | `pending-update-loop.md` | Closes / keeps / rewrites / merges pending and updates related knowledge files as needed |
+| Current facts are ready and a delivery document is needed | `delivery-output-handoff.md` | Generates Delivery Output only |
+
+The former source-only and brief-only single-file prompt entries have been merged into `page-fact-update-loop.md` and deleted.
+
+They are no longer callable prompt entries.
 
 ## Delivery Output Prompt v1.1
 
@@ -62,10 +114,29 @@ Execution commands must not supplement, replace, or extend prompt rules.
 
 Page-specific coverage requirements should come from page brief and active source, not from ad hoc execution commands.
 
-## Source Maintenance Prompt
+## Pending Update Loop Prompt
 
-`source-maintenance.md` is used only to apply confirmed fact patches into the target active source.
+`pending-update-loop.md` is the prompt for maintaining the BOMCASE pending closure workflow.
+
+Use it when an existing ID in `pending.md` receives a human confirmation result and the project needs to execute close / keep / rewrite / merge / write-back / local consistency check.
+
+It may update `sources/*.md`, `pages/*.md`, `global-navigation.md`, `project-brief.md`, `decisions.md`, and `pending.md` according to the confirmed result and write-target rules.
+
+It does not replace `stage-check.md`; it only performs local consistency checks for the current pending update.
+
+It differs from `page-fact-update-loop.md` by trigger source:
+
+- `page-fact-update-loop.md`: user provides unrouted material for an existing page fact update.
+- `pending-update-loop.md`: user provides pending ID confirmation results and needs a multi-file closure loop.
+
+Derived pending items must be output as candidates only and must not be written into `pending.md` unless the user confirms creation.
+
+## Page Fact Update Loop Prompt
+
+`page-fact-update-loop.md` is used for existing page fact-layer updates from unrouted page material.
 
 It must not generate delivery handoff documents.
 
-It must not update `pending.md` or `decisions.md` unless explicitly instructed by the relevant workflow.
+It may update `sources/*.md` first and `pages/*.md` second when current page facts and the page reading layer are both affected.
+
+It does not directly update `pending.md` or `decisions.md` by default. Pending and decision findings are output as candidates unless the task is explicitly routed to the relevant workflow.

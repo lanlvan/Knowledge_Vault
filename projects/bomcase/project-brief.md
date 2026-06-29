@@ -61,18 +61,17 @@
 
 基于 `pending.md` 当前汇总:
 
-* 总计:8(A:1 / B:7 / C:0);
-* Navigation:4(A:0 / B:4);
+* 总计:1(A:0 / B:1 / C:0);
+* Navigation:1(A:0 / B:1);
 * Home:0(A:0 / B:0);
 * Shop:0(A:0 / B:0);
 * Open Box:0(A:0 / B:0);
 * Open Box Result:0(A:0 / B:0);
-* Toy Collection:4(A:1 / B:3)。
+* Toy Collection:0(A:0 / B:0)。
 
 当前优先关注:
 
-* Navigation:全局导航路由、登录态入口语义与首页默认高亮口径;
-* Toy Collection:收藏完成度取整规则、单卡状态语义边界与筛选联动口径。
+* Navigation:全局导航路由映射。
 
 ## 8. 当前关键判断概况
 
