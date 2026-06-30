@@ -77,6 +77,28 @@ They are no longer callable prompt entries.
 
 It must not contain page-specific business facts.
 
+### Delivery Output v0.3 Information Layer Compatibility
+
+`delivery-output-handoff.md` remains the active Delivery Output prompt and now supports v0.3 information-layer reading compatibility.
+
+Current compatibility status:
+
+- When an active source provides `section_layer` and `layer_note`, the prompt can consume them as reading indexes for purpose, priority, and density.
+- `section_layer` and `layer_note` are reading indexes only and do not replace source正文 facts.
+- Reading path supports `F`, `E`, `F+E`, `A:view`, and `Unknown`.
+- In normal handoff generation, `A:view` is coverage check only.
+- `A:view` may be fully expanded only for QA / Acceptance Draft use.
+- `F+E` sections require local split reading.
+- `Unknown` must not enter confirmed handoff正文.
+- If an active source has no information-layer annotations, generation falls back to the existing source-chain reading rules.
+
+Validation scope and current limits:
+
+- Open Box has been used as the first P1 single-page validation sample for this compatibility.
+- Current validation is single-page only; cross-page validation remains incremental.
+- Dev-readable application validation is not yet complete.
+- This compatibility does not change product facts and does not replace `source`, `page brief`, `pending.md`, or `decisions.md`.
+
 Delivery output generation must read:
 
 1. page brief
