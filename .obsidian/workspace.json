@@ -8,17 +8,37 @@
         "type": "tabs",
         "children": [
           {
-            "id": "18e0c104924857e9",
+            "id": "5c392b9fa9c724e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/bomcase/outputs/handoff/_drafts/open-box-guarantee-change-note-v0.3-formal-review.md",
+                "file": "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.3-full-p0-source-test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "open-box-guarantee-change-note-v0.3-formal-review"
+              "title": "open-box-handoff-v1.3-full-p0-source-test"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4978ec838a2dea1a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0dd2b27ced060d77",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-full-loop-final-check.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "open-box-handoff-full-loop-final-check"
             }
           }
         ]
@@ -181,11 +201,13 @@
       "bases:新建数据库": false
     }
   },
-  "active": "18e0c104924857e9",
+  "active": "5c392b9fa9c724e6",
   "lastOpenFiles": [
+    "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.3-full-draft.md",
+    "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.3-full-p0-source-test.md",
+    "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.4-structure-test.md",
     "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-full-loop-final-check.md",
     "projects/bomcase/outputs/handoff/_drafts/open-box-guarantee-change-note-v0.3-formal-review.md",
-    "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.4-structure-test.md",
     "projects/bomcase/outputs/handoff/_drafts/open-box-guarantee-change-note-baseline-v1.3-v0.2.md",
     "projects/bomcase/outputs/handoff/2026-06-open-box-handoff-v1.3.md",
     "projects/bomcase/outputs/handoff/_drafts/open-box-handoff-v1.3.md",
@@ -209,8 +231,6 @@
     "projects/bomcase/prompts/page-fact-layer-bootstrap.md",
     "projects/bomcase/sources/toy-collection.md",
     "projects/bomcase/sources/open-box-result.md",
-    "projects/bomcase/sources/shop.md",
-    "projects/bomcase/specs/source-brief-object-spec.md",
     "projects/bomcase/specs",
     "projects/bomcase/updates"
   ]

@@ -99,6 +99,16 @@ This prompt must not maintain, repair, or infer the fact layer. If the fact laye
 * decisions.md 是项目级有效决策来源；
 * outputs 不得反向作为事实源。
 
+### 3.1 v0.3 Information Layer Compatibility Rule
+
+When the active source contains `section_layer` and `layer_note`, Delivery Output must use them as reading indexes for content purpose, priority, and density.
+
+`section_layer` and `layer_note` do not change source facts and do not replace source正文.
+
+If the active source does not contain information-layer annotations, generation falls back to the existing page brief -> active source -> pending -> decisions reading rules.
+
+If annotations conflict with source正文 facts, source正文 facts take priority and the conflict must be reported in Risk or Exception.
+
 ---
 
 ## 4. Forbidden Fact Sources
@@ -367,6 +377,19 @@ Delivery Output 不得出现：
 * 同一章节内自我嵌套；
 * 后续章节插入前序章节内部；
 * 同一章节内重复出现相同角色边界段落。
+
+### F+E Local Split Execution Rule
+
+For `F+E` sections:
+
+* table bodies should prioritize F content: field relationship, state trigger, interaction condition, business boundary, backend-return basis;
+* E content should be attached to the appropriate copy / state copy / button / hint / hover / info / expression boundary location;
+* repeated E boundaries should be merged into a table note, section note, or footnote;
+* do not repeat the same E boundary in every row;
+* examples such as "具体视觉表现以最终设计稿为准" should not be repeated in every state / field / interaction row;
+* user-visible copy must not be deleted;
+* only repeated expression boundaries may be merged;
+* if F and E cannot be reliably split, mark human confirmation instead of forcing classification.
 
 ---
 
@@ -1021,6 +1044,22 @@ UI 视觉细节如颜色、动效、icon 样式、间距、尺寸、视觉层级
 * 服务端返回检查；
 * 范围控制检查。
 
+### A:view Handling Rule
+
+A:view is an acceptance/check view, not a fact source.
+
+A:view does not participate in Main Fact Anchor selection.
+
+A:view is coverage check only for normal Delivery Output handoff正文.
+
+A:view must not drive repeated正文 expansion.
+
+A:view may be fully expanded only for QA / Acceptance Draft.
+
+A:view must not be used to add rules, states, copy, interactions, or boundaries.
+
+If A:view contains content not supported by F / E / F+E, report governance risk or require human confirmation.
+
 ---
 
 ## 22. Output Boundary
@@ -1119,6 +1158,15 @@ Copy Coverage 检查 active source 的关键事实是否被覆盖，不检查是
 * 待确认 / 待补充边界；
 * non-goals；
 * 明确排除项。
+
+### Reading Path Rule Table (v0.3 Information Layer)
+
+| Task | F | E | F+E | A:view | Unknown |
+|---|---|---|---|---|---|
+| Delivery Output handoff 正文 | 读为正文主事实：规则、条件、边界、触发、结果 | 读为必要用户可见文案与表达约束 | 必须局部拆分：规则进入正文主干，表达进入对应字段 / 状态 / 交互位置 | coverage check only；不作为 Main Fact Anchor；默认不驱动正文扩写 | 不进入确定正文；标记风险并人工确认 |
+| Copy Coverage Check | 核对事实是否覆盖 | 核对文案与表达是否覆盖 | 拆分后分别核对事实与表达覆盖 | 仅作为覆盖验证对照；不得反向补事实 | 列入缺口清单，要求人工确认 |
+| Acceptance / QA Draft | 可读取并转可测断言 | 可读取并转文案 / 展示断言 | 拆分后可完整展开为 QA 验收项 | 可完整展开，但仅限 QA / Acceptance Draft；需标注为 derived check view | 不得直接写成验收结论；先人工确认 |
+| Risk / Exception Report | 作为主风险基线 | 作为表达遗漏风险基线 | 拆分失败即风险项 | 若与 F / E 不一致，报治理风险；若出现新规则，报高风险 | 必报风险；禁止自动归类到 F / E / A:view |
 
 如果发现 active source 中已确认的用户可见文案、字段表、状态表、交互表、验收表被遗漏或被摘要化，必须停止生成完整交付文档，并输出 `Copy Coverage Failure Report`。
 
@@ -1336,7 +1384,22 @@ Copy Coverage 检查 active source 的关键事实是否被覆盖，不检查是
 
 如存在遗漏，不得声称生成完整交付文档，应输出 Copy Coverage Failure Report。
 
-## 7. Boundary Check
+## 7. Information Layer Check
+
+说明：
+
+- 是否检测到 `section_layer` / `layer_note`；
+- 若存在，是否按 v0.3 规则消费；
+- 若不存在，是否已回退旧规则；
+- 是否存在 A:view；
+- A:view 用途是 coverage check only 还是 QA / Acceptance expanded；
+- 是否存在 F+E；
+- F+E 是否执行局部拆分；
+- 是否存在 Unknown；
+- Unknown 是否进入确定正文；
+- 如未消费信息层规则，说明原因。
+
+## 8. Boundary Check
 
 确认：
 
@@ -1351,11 +1414,11 @@ Copy Coverage 检查 active source 的关键事实是否被覆盖，不检查是
 - 未读取 archived source；
 - 未写入 Fact Patch / Maintenance Log / 内部治理话术到交付正文。
 
-## 8. Risk or Exception
+## 9. Risk or Exception
 
 如有异常列出；没有则写“未发现异常”。
 
-## 9. Next Step
+## 10. Next Step
 
 只能输出：
 
