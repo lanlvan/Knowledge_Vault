@@ -8,6 +8,7 @@
 | `page-fact-update-loop.md` | Incrementally update an existing page fact layer from unrouted page material | active |
 | `pending-update-loop.md` | Process existing pending ID confirmation results and local consistency checks | active |
 | `delivery-output-handoff.md` | Generate delivery handoff documents from current page facts | active |
+| `delivery-output-module-change-note.md` | Generate module-level Delivery Output change notes from current active fact layer | active |
 
 ## Draft / Supporting Prompts
 
@@ -99,6 +100,34 @@ Full mode must preserve the delivery granularity of active source, including:
 - bottom summary copy
 
 If Copy Coverage fails, the generator must output Copy Coverage Failure Report instead of claiming a complete handoff document.
+
+## Delivery Output Module Change Note Prompt
+
+`delivery-output-module-change-note.md` is the active prompt for module-level Delivery Output change notes.
+
+Relationship:
+
+- Belongs to the Delivery Output family.
+- Module-scoped variant of `delivery-output-handoff.md`.
+- Inherits Delivery Output skeleton semantics.
+- Does not create a separate document system.
+- Does not replace Full Handoff or Incremental Handoff.
+
+Use when:
+
+- A single module or local rule changed.
+- Full Handoff is too broad for the immediate reader.
+- Incremental Full-context Handoff still carries too much page context.
+- The target reader needs focused current-rule, development-impact, and acceptance information.
+
+Does not:
+
+- Maintain source.
+- Maintain page brief.
+- Update pending.
+- Update decisions.
+- Use old output / draft output / archive as fact source.
+- Generate page-specific skeleton rules.
 
 ## Clean Execution Command Rule
 

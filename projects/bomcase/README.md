@@ -126,11 +126,20 @@
 6. 人工确认；
 7. 归档到 `outputs/handoff/`。
 
+Module Change Note:
+
+Use `projects/bomcase/prompts/delivery-output-module-change-note.md` only after the fact layer has already been updated and validated.
+
+It is a module-scoped Delivery Output variant.
+
+It inherits Delivery Output skeleton semantics and does not replace Full Handoff or Incremental Handoff.
+
 边界：
 
 * 不得将 archive、old output、draft output、`outputs/handoff/_drafts/` 作为事实源；
 * full mode 不得将 active source 中仍有效事实摘要化；
 * 执行命令只提供输入参数、读取范围、输出路径和执行边界，不补充、不替代、不扩展 prompt 规则。
+* Module Change Note 命令同样只提供输入参数、读取范围、输出路径和执行边界，不补充、不替代、不扩展结构规则。
 
 > Test-4 通过 Copy Coverage 验证仅作为 workflow 验证结论，不作为产品事实写入。
 
