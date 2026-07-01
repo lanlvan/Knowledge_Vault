@@ -12,12 +12,16 @@ updated: 2026-06-18
 # Shop Active Source
 
 ## 1. Source Scope
+<!-- section_layer: F -->
+<!-- layer_note: source 身份、事实范围、读取边界和事实冲突回源口径按 F 读取。 -->
 
 本文件是 Shop 页面当前 active source（`source_type: handoff_document`），用于维护页面事实、字段、状态、交互与验收口径。
 
 本文件不替代完整交易系统规则，事实冲突时以本文件为准。
 
 ## 2. Page Goal
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面用途、用户可执行动作和详情/下单流程承接为 F；用户可见入口和按钮文案仅作辅助读取，正文文案以 Data / Fields 与 Interactions 章节为主，读取时必须局部拆分。 -->
 
 该页面用于展示商城商品列表，并展示对应的军需权益内容。
 
@@ -37,14 +41,22 @@ updated: 2026-06-18
 ---
 
 ## 3. Structure
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面区域结构、区域归属、模块关系和不展开边界为 F；区域内可见元素名称、模块文案、标签和视觉标识为 E，读取时必须局部拆分。 -->
 
 ### 1. 顶部全站导航栏
+<!-- section_layer: F -->
+<!-- layer_note: 顶部全站导航栏作为已有页面区域和本页不展开边界按 F 读取；本节不确认具体导航高亮业务口径。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 顶部全站导航栏的位置关系按页面结构事实 F 读取。 -->
 
 页面顶部。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部导航包含关系为 F；Logo、公测版标识、顶部导航菜单、登录 / 注册入口等可见元素名称为 E，读取时必须局部拆分。 -->
 
 - Logo
     
@@ -56,11 +68,15 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F -->
+<!-- layer_note: 顶部导航高亮不在本页独立 pending 中维护、且本页不确认具体高亮口径的边界按 F 读取。 -->
 
-- 导航高亮口径以 `pending.md` 的 `NAV-B004` 为准；确认前不固定为「Bomcase」或「商城」。
+- 导航高亮口径当前不在本页独立 pending 中维护；本页不确认「Bomcase」或「商城」高亮口径。
     
 
 ### 说明范围
+<!-- section_layer: F -->
+<!-- layer_note: 顶部导航为已有功能且本次不展开的范围边界按 F 读取。 -->
 
 - 已有功能，本次不展开。
     
@@ -68,12 +84,18 @@ updated: 2026-06-18
 ---
 
 ### 2. 页面顶部说明横幅
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部说明横幅的区域归属和规则入口承接为 F；主文案、副文案、查看规则入口和图标表达为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 页面顶部说明横幅位于导航栏下方的位置关系按 F 读取。 -->
 
 导航栏下方。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部说明横幅包含元素的结构关系为 F；礼盒图标、主文案、副文案、查看规则入口和右侧箭头图标等可见表达为 E，读取时必须局部拆分。 -->
 
 - 礼盒图标
     
@@ -87,6 +109,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 查看规则作为已有功能弹窗入口为 F；横幅主文案、副文案和入口文案为 E，读取时必须局部拆分。 -->
 
 - 主文案：
     
@@ -102,12 +126,18 @@ updated: 2026-06-18
 ---
 
 ### 3. 商品分类 / 排序 / 搜索区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 分类、排序、搜索区域的位置、联动规则、默认恢复规则和后端限制为 F；分类名、排序项、搜索入口等用户可见表达为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 商品分类 / 排序 / 搜索区域位于顶部说明横幅下方的位置关系按 F 读取。 -->
 
 顶部说明横幅下方。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 分类、排序、搜索三类控件的区域归属为 F；分类枚举、综合排序下拉框、搜索输入框和搜索图标等可见名称为 E，读取时必须局部拆分。 -->
 
 #### 分类区域
 
@@ -141,6 +171,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 分类最大数量、超出后端限制、默认选中、点击分类后的列表联动和搜索/排序恢复规则为 F；默认分类和排序项文案为 E，读取时必须局部拆分。 -->
 
 - 分类最大数量固定为 9 个；
     
@@ -168,6 +200,8 @@ updated: 2026-06-18
         
 
 ### 说明范围
+<!-- section_layer: F -->
+<!-- layer_note: 搜索为已有功能且本次不展开的范围边界按 F 读取。 -->
 
 - 搜索为已有功能，本次不展开。
     
@@ -175,17 +209,25 @@ updated: 2026-06-18
 ---
 
 ### 4. 商品列表区域
+<!-- section_layer: F -->
+<!-- layer_note: 商品列表区域的区域归属、列表承载关系、展示排数、滚动和分页边界按 F 读取。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 商品列表区域位于分类区域下方的位置关系按 F 读取。 -->
 
 分类区域下方。
 
 ### 包含元素
+<!-- section_layer: F -->
+<!-- layer_note: 商品卡片列表作为商品列表区域的结构包含项按 F 读取。 -->
 
 - 商品卡片列表
     
 
 ### 已确认说明
+<!-- section_layer: F -->
+<!-- layer_note: 商品列表最多 2 排、单排数量由 UI 布局决定、当前截图布局示例以及不支持滚动/分页加载的边界按 F 读取。 -->
 
 - 商品列表最多展示 2 排；
     
@@ -201,12 +243,18 @@ updated: 2026-06-18
 ---
 
 ### 5. 商品卡片区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品卡片字段关系、点击跳转、Tag 来源和数量限制、后端返回字段及权益类型边界为 F；商品标题、标签、价格、销量、权益说明和按钮等用户可见表达为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 商品卡片区域位于商品列表内部的位置关系按 F 读取。 -->
 
 商品列表内部。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品卡片包含字段和区域归属为 F；商品标题、商品标签、商品价格、销量字段、权益说明文案和立即下单按钮等可见字段/按钮名称为 E，读取时必须局部拆分。 -->
 
 - 商品主图区域
     
@@ -226,6 +274,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品图片/标题点击跳转、Tag 来源与单个展示限制、销量字段来源、价格类型排除、标题内容归属和权益类型边界为 F；“已售 xxx”、商品标题组成和权益类型名称等可见表达为 E，读取时必须局部拆分。 -->
 
 - 商品图片可点击；
     
@@ -266,12 +316,18 @@ updated: 2026-06-18
 ---
 
 ### 6. 商品主图与权益展示区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品主图与当前选中赠品图的组合关系、权益切换能力和切换后结果为 F；商品主图、当前选中权益图和主视觉展示表达为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 商品主图与权益展示区域位于商品卡片顶部的位置关系按 F 读取。 -->
 
 商品卡片顶部。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品主图与当前选中权益图的包含关系为 F；两类图像作为卡片顶部展示表达为 E，读取时必须局部拆分。 -->
 
 - 商品主图
     
@@ -279,6 +335,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 主图区域由商品主图和当前选中赠品图组合、用户可切换权益、切换后当前赠品图变化为 F；主视觉实现与图像展示表达为 E，读取时必须局部拆分。 -->
 
 - 商品主图区域由：
     
@@ -301,12 +359,18 @@ updated: 2026-06-18
 ---
 
 ### 7. 权益缩略图区
+<!-- section_layer: F+E -->
+<!-- layer_note: 权益缩略图区的区域归属、默认选中、不可取消全部和固定权益同逻辑规则为 F；权益缩略图和黄色选中标识为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 权益缩略图区位于商品卡片底部权益区域的位置关系按 F 读取。 -->
 
 商品卡片底部权益区域。
 
 ### 包含元素
+<!-- section_layer: F+E -->
+<!-- layer_note: 权益缩略图和黄色选中标识的元素归属为 F；缩略图和黄色选中态标识的可见表达为 E，读取时必须局部拆分。 -->
 
 - 权益缩略图
     
@@ -314,6 +378,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 所有权益类型一致选中逻辑、必须默认选中、不允许取消全部和固定权益保持选中逻辑为 F；黄色标识代表当前选中状态的可见表达为 E，读取时必须局部拆分。 -->
 
 - 所有权益类型均保持一致选中逻辑；
     
@@ -329,12 +395,18 @@ updated: 2026-06-18
 ---
 
 ### 8. 底部信任保障区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 底部信任保障区域作为固定展示模块的区域归属为 F；保障标题与副文案为 E，读取时必须局部拆分。 -->
 
 ### 区域位置
+<!-- section_layer: F -->
+<!-- layer_note: 底部信任保障区域位于页面底部的位置关系按 F 读取。 -->
 
 页面底部。
 
 ### 包含元素
+<!-- section_layer: E -->
+<!-- layer_note: 底部信任保障区域列出的正品保障、安全可靠、极速发货、客服支持为用户可见保障标题，按 E 读取。 -->
 
 - 正品保障
     
@@ -346,6 +418,8 @@ updated: 2026-06-18
     
 
 ### 已确认说明
+<!-- section_layer: F+E -->
+<!-- layer_note: 底部信任保障区域固定展示为 F；正品保障/官方授权、安全可靠/专业检测、极速发货/快速响应、客服支持/7x24小时等展示内容为 E，读取时必须局部拆分。 -->
 
 固定展示模块。
 
@@ -371,6 +445,8 @@ updated: 2026-06-18
 ---
 
 ## 4. Data / Fields
+<!-- section_layer: F+E -->
+<!-- layer_note: 字段名、类型、字段关系、当前选中索引、跳转地址和字段含义为 F；示例值、占位文案、按钮文案、标签、销量展示和保障文案为 E，读取时必须局部拆分。 -->
 
 |区域|字段名|类型|示例值|说明|
 |---|---|---|---|---|
@@ -399,8 +475,12 @@ updated: 2026-06-18
 ---
 
 ## 5. States
+<!-- section_layer: F+E -->
+<!-- layer_note: 状态条件、默认值、展示条件、选中规则和未确认状态边界为 F；状态文案、按钮文案、Tag 文案、黄色标识和图像展示表达为 E，读取时必须局部拆分。 -->
 
 ### 1. 页面默认状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 默认分类、默认排序和搜索框为空的状态规则为 F；“全部商品”“综合排序”等默认选项文案为 E，读取时必须局部拆分。 -->
 
 - 当前默认分类：
     
@@ -416,8 +496,12 @@ updated: 2026-06-18
 ---
 
 ### 2. 商品列表状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品列表有数据/空状态条件、双排布局和当前截图布局示例为 F；空状态占位图、文案和按钮为 E，读取时必须局部拆分。 -->
 
 ### 有数据状态
+<!-- section_layer: F -->
+<!-- layer_note: 商品列表有数据时展示商品卡片、双排布局和当前截图 5 列 × 2 行示例按 F 读取。 -->
 
 当前截图为有数据状态：
 
@@ -429,6 +513,8 @@ updated: 2026-06-18
     
 
 ### 空状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 暂无商品触发空状态为 F；占位图、“暂无商品，敬请期待”和“看看别的”按钮文案为 E，读取时必须局部拆分。 -->
 
 暂无商品时：
 
@@ -446,6 +532,8 @@ updated: 2026-06-18
 ---
 
 ### 3. 商品 Tag 状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 单商品仅允许展示 1 个 Tag 的规则为 F；推荐、NEW、HOT 等 Tag 文案为 E，读取时必须局部拆分。 -->
 
 当前存在：
 
@@ -464,8 +552,12 @@ updated: 2026-06-18
 ---
 
 ### 4. 权益展示状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 3选1 与固定类型的展示数量、默认选中和可切换规则为 F；权益缩略图和黄色选中标识为 E，读取时必须局部拆分。 -->
 
 ### 3选1 类型
+<!-- section_layer: F+E -->
+<!-- layer_note: 3选1 类型展示 3 个权益缩略图、必须默认选中且允许切换为 F；当前选中项的黄色选中标识为 E，读取时必须局部拆分。 -->
 
 - 展示 3 个权益缩略图；
     
@@ -477,6 +569,8 @@ updated: 2026-06-18
     
 
 ### 固定类型
+<!-- section_layer: F+E -->
+<!-- layer_note: 固定类型展示单权益并保持选中状态逻辑为 F；单权益缩略图展示为 E，读取时必须局部拆分。 -->
 
 - 展示单权益缩略图；
     
@@ -486,6 +580,8 @@ updated: 2026-06-18
 ---
 
 ### 5. 主图展示规则
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品主图区域由商品主图与当前选中赠品图组合、切换权益后当前赠品图变化为 F；主图和赠品图的图像展示为 E，读取时必须局部拆分。 -->
 
 - 商品主图区域由：
     
@@ -502,6 +598,8 @@ updated: 2026-06-18
 ---
 
 ### 6. 按钮展示状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 当前截图所有商品均展示按钮以及售罄、下架、不可购买态不在本次范围为 F；“立即下单”按钮文案为 E，读取时必须局部拆分。 -->
 
 当前截图中：
 
@@ -522,6 +620,8 @@ updated: 2026-06-18
 ---
 
 ## 6. Interactions
+<!-- section_layer: F -->
+<!-- layer_note: 触发对象、触发条件、交互结果、适用范围和不适用处理均为交互规则，按 F 读取；表中按钮或入口名称仅用于定位触发对象。 -->
 
 |触发对象|触发条件|交互结果|适用范围|不适用处理|
 |---|---|---|---|---|
@@ -537,14 +637,22 @@ updated: 2026-06-18
 ---
 
 ### Empty States
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品列表空状态的触发、按钮点击结果和浏览返回规则为 F；空状态占位图、文案和按钮文案为 E，读取时必须局部拆分。 -->
 
 ### 1. 商品列表空状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品列表无数据触发空状态和点击按钮返回其它商品浏览为 F；占位图、“暂无商品，敬请期待”和“看看别的”为 E，读取时必须局部拆分。 -->
 
 ### 触发条件
+<!-- section_layer: F -->
+<!-- layer_note: 暂无商品数据作为商品列表空状态触发条件按 F 读取。 -->
 
 暂无商品数据。
 
 ### 展示内容
+<!-- section_layer: E -->
+<!-- layer_note: 商品列表空状态中的占位图和“暂无商品，敬请期待”属于用户可见展示内容，按 E 读取。 -->
 
 - 占位图
     
@@ -554,6 +662,8 @@ updated: 2026-06-18
         
 
 ### 按钮
+<!-- section_layer: E -->
+<!-- layer_note: 商品列表空状态按钮文案“看看别的”按 E 读取。 -->
 
 - 按钮文案：
     
@@ -561,6 +671,8 @@ updated: 2026-06-18
         
 
 ### 点击结果
+<!-- section_layer: F -->
+<!-- layer_note: 商品列表空状态按钮点击后返回其它商品浏览的交互结果按 F 读取。 -->
 
 - 返回其它商品浏览。
     
@@ -568,14 +680,20 @@ updated: 2026-06-18
 ---
 
 ## 7. Rules
+<!-- section_layer: F -->
+<!-- layer_note: 页面规则覆盖范围、商品与权益的主体关系、示例文案和示例值不固化为后端系统规则的边界按 F 读取。 -->
 
 * 页面规则只覆盖展示规则、状态规则和交互边界。
 * 商品为主体，权益为随商品展示的附加表达，不扩展完整交易规则。
 * 示例文案与示例值用于页面表达，不直接固化为后端系统规则。
 
 ## 8. Acceptance Criteria
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；本章仅用于 coverage check、测试验收和产品人工验收，不作为主事实来源，不反向补充或修正 F / E 正文事实。 -->
 
 ### 1. 页面结构验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将页面结构和区域要求转为 coverage check，不作为主事实来源，不反向补充 Structure 章节。 -->
 
 - 页面包含：
     
@@ -595,6 +713,8 @@ updated: 2026-06-18
 ---
 
 ### 2. 字段展示验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将字段、Tag 和权益展示要求转为 coverage check，不作为主事实来源，不反向补充 Data / Fields 或 States 章节。 -->
 
 - 商品标题正确展示；
     
@@ -620,6 +740,8 @@ updated: 2026-06-18
 ---
 
 ### 3. 状态验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将默认状态、权益选中态和空状态转为 coverage check，不作为主事实来源，不反向补充 States 章节。 -->
 
 - 默认分类为：
     
@@ -647,6 +769,8 @@ updated: 2026-06-18
 ---
 
 ### 4. 交互验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将点击图片/标题/权益缩略图/分类后的结果转为 coverage check，不作为主事实来源，不反向补充 Interactions 章节。 -->
 
 - 点击商品图片可进入商品详情页；
     
@@ -670,6 +794,8 @@ updated: 2026-06-18
 ---
 
 ### 5. 范围控制验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将已有功能和不在本次范围的内容转为 coverage check，不作为主事实来源，不反向扩展 Non-goals 或 Rules 章节。 -->
 
 以下内容属于已有功能或不在本次范围：
 
@@ -697,17 +823,24 @@ updated: 2026-06-18
 ---
 
 ## 9. Pending Boundary
+<!-- section_layer: F -->
+<!-- layer_note: 当前 Shop 无独立 pending 的边界按 F 读取；本章不新增 pending、不确认未登记事项。 -->
 
 暂无。
 
 ## 10. Non-goals
+<!-- section_layer: F -->
+<!-- layer_note: 不扩展支付、库存、订单、履约、发货、资产、权益到账、结算、搜索、规则弹窗、下单流程及未确认范围的边界按 F 读取。 -->
 
 * 不扩展支付、库存、订单、履约、发货、资产、权益到账、结算系统规则。
 * 不扩展搜索、规则弹窗、下单流程等已有能力内部规则。
 * 不把未确认范围写成确定事实。
 
 ## 11. Maintenance Log
+<!-- section_layer: Unknown -->
+<!-- layer_note: 维护记录仅承载 source 治理追溯和变更摘要，不作为 Delivery Output 正文事实；如用于变更追溯或规则演进判断，需人工确认。 -->
 
 2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
 2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.
-2026-06-28 | pending_boundary_cleanup | Reframed Shop navigation highlight as NAV-B004 pending boundary without confirming Bomcase or Shop.
+2026-06-28 | pending_boundary_cleanup | Reframed Shop navigation highlight as unresolved top navigation boundary without confirming Bomcase or Shop.
+2026-07-01 | confirmed_fact_fix | Removed broken NAV-B004 pending reference from Shop source; no independent Shop pending item added.

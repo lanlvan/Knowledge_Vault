@@ -12,12 +12,16 @@ updated: 2026-06-29
 # Home Active Source
 
 ## 1. Source Scope
+<!-- section_layer: F -->
+<!-- layer_note: source 身份、事实范围、读取边界、事实冲突回源和不替代完整系统规则库的约束按 F 读取。 -->
 
 本文件是 Home 页面当前 active source（`source_type: handoff_document`），用于维护页面事实、字段、状态、交互与验收口径。
 
 事实冲突时以本文件为准；本文件不替代完整系统规则库。
 
 ## 2. Page Goal
+<!-- section_layer: F+E -->
+<!-- layer_note: 首页展示目标、入口承接、用户可执行动作和不展开系统规则的范围按 F 读取；Banner、热门掉落、军需权益、商品、流程、支付后说明、信任背书和概率公示等可见模块/入口表达按 E 读取，读取时必须局部拆分。 -->
 
 当前页面用于展示：
 
@@ -58,8 +62,12 @@ updated: 2026-06-29
 ---
 
 ## 3. Structure
+<!-- section_layer: F+E -->
+<!-- layer_note: 首页区域结构、模块位置、入口关系、配置消费边界和已有功能不展开边界按 F 读取；区域名称、标题、按钮、标签、图标、菜单项和说明文案等可见表达按 E 读取，读取时必须局部拆分。 -->
 
 ### 1. 顶部导航栏
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部导航栏的位置、导航结构、Home 默认高亮状态、登录态/跳转细节不展开边界按 F 读取；BOMCASE Logo、公测版标签、导航菜单项和登录 / 注册入口等可见元素按 E 读取；NAV-B001 不在本节扩写为导航高亮规则。 -->
 
 位置：
 
@@ -111,6 +119,8 @@ updated: 2026-06-29
 ---
 
 ### 2. 左侧热门掉落区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 左侧热门掉落区域位置、默认选中热门掉落、Tab 切换仅影响左侧区域、卡片可点击和详情/数据来源/等级规则不展开边界按 F 读取；Tab 名称、武器图片、名称、副标题和等级角标等卡片展示按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -158,6 +168,8 @@ updated: 2026-06-29
 ---
 
 ### 3. Banner 区域
+<!-- section_layer: F+E -->
+<!-- layer_note: Banner 作为管理端配置项、内容为图片、最多 3 张、自动轮播、手动切换和点击行为按配置执行的规则按 F 读取；Banner 图片内活动文案、权益提示、立即选购和评价等用户可见表达按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -214,6 +226,8 @@ updated: 2026-06-29
 ---
 
 ### 4. 玩法流程区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 玩法流程区域位置和固定展示状态按 F 读取；流程图标、标题、描述、流程箭头以及四步流程文案按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -250,6 +264,8 @@ updated: 2026-06-29
 ---
 
 ### 5. 本期可获军需权益区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 本期可获军需权益区域位置、管理端配置来源、UI 布局决定数量、不支持滚动更多、查看全部跳转军需页、hover 预览可隐藏按 F 读取；区域标题、查看全部按钮、权益图片、权益名称和眼睛图标按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -292,6 +308,8 @@ updated: 2026-06-29
 ---
 
 ### 6. 支付后会发生什么区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 支付后说明区域位置和固定展示状态按 F 读取；图标、标题以及在线拆盒 / 军需加赠 / 前往仓库等描述文案按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -324,6 +342,8 @@ updated: 2026-06-29
 ---
 
 ### 7. 安心购物 · 售后无忧区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 安心购物区域位置和固定展示状态按 F 读取；官方正品、专业速运、安全支付、专属客服等标题与描述文案按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -358,6 +378,8 @@ updated: 2026-06-29
 ---
 
 ### 8. 热门商品区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 热门商品区域位置、商品数据来自运营管理端配置、数量由 UI 布局展示和不支持滚动更多按 F 读取；区域标题、热销推荐标签、查看更多商品和商品卡片列表等可见表达按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -387,6 +409,8 @@ updated: 2026-06-29
 ---
 
 ### 9. 商品卡片区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品卡片字段组成、固定/可选赠品类型、3 选 1、默认选中、切换选中、下单携带当前赠品、商品图/标题进详情、按钮进下单、未登录先登录和已有逻辑边界按 F 读取；商品图片、名称、价格、赠品标签/图片、赠品文案和 CTA 按钮按 E 读取，读取时必须局部拆分。 -->
 
 包含元素：
 
@@ -404,6 +428,8 @@ updated: 2026-06-29
 当前商品存在两种赠品类型：
 
 ### 固定赠品
+<!-- section_layer: E -->
+<!-- layer_note: 本节位于商品卡片区域下，仅描述固定赠品标签和固定赠品图片的用户可见展示，按 E 读取；固定赠品业务边界仍以上级商品卡片区域为准。 -->
 
 展示：
 
@@ -413,6 +439,8 @@ updated: 2026-06-29
     
 
 ### 可选赠品
+<!-- section_layer: F+E -->
+<!-- layer_note: 本节位于商品卡片区域下，3 选 1、默认选中、可切换选中和下单携带当前赠品按 F 读取；“任选1款军需”“可选赠品（3选1）”和赠品图片列表按 E 读取，读取时必须局部拆分。 -->
 
 展示：
 
@@ -452,6 +480,8 @@ updated: 2026-06-29
 ---
 
 ### 10. 页面底部信任背书区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面底部信任背书区域位置、固定信任背书说明和概率公示为已有弹窗功能按 F 读取；军需必中、时效提示、公平透明、概率公示入口及其当前可见文案按 E 读取，读取时必须局部拆分。 -->
 
 位置：
 
@@ -490,6 +520,8 @@ updated: 2026-06-29
 ---
 
 ## 4. Data / Fields
+<!-- section_layer: F+E -->
+<!-- layer_note: 字段所属区域、字段名、类型、字段含义、配置字段、导航路由待接配置和赠品选中状态含义按 F 读取；示例值、标题、按钮文案、标签、角标、权益/商品名称和信任背书文案按 E 读取，读取时必须局部拆分。 -->
 
 |区域|字段名|类型|示例值|说明|
 |---|---|---|---|---|
@@ -532,8 +564,12 @@ updated: 2026-06-29
 ---
 
 ## 5. States
+<!-- section_layer: F+E -->
+<!-- layer_note: 各首页模块默认态、有数据态、固定展示态、选中态、hover 可隐藏和赠品切换状态按 F 读取；状态文案、等级角标、图标、标题、按钮、标签和展示内容按 E 读取，读取时必须局部拆分。 -->
 
 ### 1. 导航栏
+<!-- section_layer: F+E -->
+<!-- layer_note: 当前页导航高亮和右侧登录 / 注册展示状态按 F 读取；“Bomcase”“登录 / 注册”等可见文本按 E 读取；本节不把 NAV-B001 扩写为导航高亮或选中态 pending。 -->
 
 - 当前页导航高亮显示为「Bomcase」；
     
@@ -543,6 +579,8 @@ updated: 2026-06-29
 ---
 
 ### 2. 左侧热门掉落区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 左侧热门掉落默认选中、有数据状态和卡片展示状态按 F 读取；热门掉落、图片、名称、副标题以及 SSS / SS / S 等等级展示按 E 读取，读取时必须局部拆分。 -->
 
 - 默认选中「热门掉落」；
     
@@ -563,6 +601,8 @@ updated: 2026-06-29
 ---
 
 ### 3. Banner 区域
+<!-- section_layer: F+E -->
+<!-- layer_note: Banner 有数据状态、活动图片展示、左右切换按钮可见和轮播圆点可见按 F 读取；Banner 图片、切换按钮和轮播圆点等展示表达按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为有数据状态；
     
@@ -576,6 +616,8 @@ updated: 2026-06-29
 ---
 
 ### 4. 玩法流程区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 玩法流程固定展示状态按 F 读取；流程箭头连接步骤和步骤展示表达按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为固定展示状态；
     
@@ -585,6 +627,8 @@ updated: 2026-06-29
 ---
 
 ### 5. 本期可获军需权益区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 军需权益区域有数据状态、多张权益卡片展示和 hover 功能当前可隐藏按 F 读取；权益图片、名称和眼睛图标按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为有数据状态；
     
@@ -600,6 +644,8 @@ updated: 2026-06-29
 ---
 
 ### 6. 支付后会发生什么区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 支付后说明区域固定展示状态和每项包含图标/标题/描述的结构按 F 读取；图标、标题和描述文案按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为固定展示状态；
     
@@ -615,6 +661,8 @@ updated: 2026-06-29
 ---
 
 ### 7. 安心购物区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 安心购物区域固定展示状态和每项包含图标/标题/描述的结构按 F 读取；图标、保障标题和描述文案按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为固定展示状态；
     
@@ -630,6 +678,8 @@ updated: 2026-06-29
 ---
 
 ### 8. 热门商品区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 热门商品区域有数据状态、当前截图展示 4 个商品卡片和商品卡片展示组成按 F 读取；商品图片、名称、价格、赠品区域和 CTA 按钮按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为有数据状态；
     
@@ -651,8 +701,12 @@ updated: 2026-06-29
 ---
 
 ### 9. 商品赠品状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 商品赠品状态集合中固定赠品与可选赠品的状态归属、默认选中和支持切换按 F 读取；赠品标签、赠品图片和可选赠品文案按 E 读取，读取时必须局部拆分。 -->
 
 ### 固定赠品
+<!-- section_layer: E -->
+<!-- layer_note: 本节位于商品赠品状态下，仅描述固定赠品状态中的固定赠品标签和固定赠品图片展示，按 E 读取。 -->
 
 - 展示固定赠品标签；
     
@@ -660,6 +714,8 @@ updated: 2026-06-29
     
 
 ### 可选赠品
+<!-- section_layer: F+E -->
+<!-- layer_note: 本节位于商品赠品状态下，可选赠品存在默认选中态和支持切换选中状态按 F 读取；“任选1款军需”“可选赠品（3选1）”按 E 读取，读取时必须局部拆分。 -->
 
 - 展示“任选1款军需”；
     
@@ -673,6 +729,8 @@ updated: 2026-06-29
 ---
 
 ### 10. 页面底部信任背书
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面底部信任背书固定展示状态和三组内容结构按 F 读取；军需必中、时效提示、公平透明等可见信任背书文案按 E 读取，读取时必须局部拆分。 -->
 
 - 当前为固定展示状态；
     
@@ -689,6 +747,8 @@ updated: 2026-06-29
 ---
 
 ## 6. Interactions
+<!-- section_layer: F+E -->
+<!-- layer_note: 触发条件、点击结果、适用范围、不适用处理、配置消费和已有功能不展开边界按 F 读取；导航菜单、热门掉落 Tab、Banner、查看全部、立即下单、概率公示等触发对象和按钮/入口名称按 E 读取，读取时必须局部拆分。 -->
 
 |触发对象|触发条件|点击结果|适用范围|不适用处理|
 |---|---|---|---|---|
@@ -708,6 +768,8 @@ updated: 2026-06-29
 ---
 
 ### Empty States
+<!-- section_layer: F -->
+<!-- layer_note: 当前截图及产品补充信息未确认空状态、本次不补充空状态规则的范围边界按 F 读取；本节不新增空状态文案或交互事实。 -->
 
 当前截图及产品补充信息中未确认空状态。
 
@@ -716,6 +778,8 @@ updated: 2026-06-29
 ---
 
 ## 7. Rules
+<!-- section_layer: F -->
+<!-- layer_note: 页面规则覆盖展示规则、状态规则、交互边界、Banner 点击按配置执行、导航路由未确认前不固定、示例值不等同固定后端规则等均按 F 读取；NAV-B001 仅保持全局导航入口路由映射 pending，不扩写为导航高亮或选中态规则。 -->
 
 * 页面规则仅承接展示规则、状态规则与交互边界，不扩展完整系统规则。
 * Banner 点击行为按配置结果执行，不在页面侧固化行为枚举。
@@ -723,8 +787,12 @@ updated: 2026-06-29
 * 页面事实以 active source 为准，示例值不等同固定后端规则。
 
 ## 8. Acceptance Criteria
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；本章仅用于 coverage check、测试验收和产品人工验收，不作为主事实来源，不反向补充或修正 F / E 正文事实。 -->
 
 ### 1. 页面结构验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将导航栏、左侧掉落、Banner、玩法流程、军需权益、支付后说明、安心购物、热门商品和底部信任背书的结构覆盖转为检查项，不作为主事实来源，不反向补充 Structure 章节。 -->
 
 - 页面结构与设计图一致；
     
@@ -752,6 +820,8 @@ updated: 2026-06-29
 ---
 
 ### 2. 字段展示验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将区域字段、商品字段、Banner 图片和掉落等级角标展示转为 coverage check，不作为主事实来源，不反向补充 Data / Fields 章节。 -->
 
 - 所有区域字段与配置一致；
     
@@ -773,6 +843,8 @@ updated: 2026-06-29
 ---
 
 ### 3. 状态验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将默认高亮、默认 Tab、Banner 轮播、可选赠品默认选中态和 hover 可隐藏转为 coverage check，不作为主事实来源，不反向补充 States 章节。 -->
 
 - 默认高亮显示为「Bomcase」；
     
@@ -788,6 +860,8 @@ updated: 2026-06-29
 ---
 
 ### 4. 交互验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将 Tab 切换、Banner 手动切换、商品详情入口、CTA、赠品携带、未登录处理、查看全部和概率公示转为 coverage check，不作为主事实来源，不反向补充 Interactions 章节。 -->
 
 - Tab 切换仅影响左侧掉落区域；
     
@@ -809,6 +883,8 @@ updated: 2026-06-29
 ---
 
 ### 5. 范围控制验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将登录逻辑、掉落详情、商品详情、下单流程、hover 完整能力、未展示空状态/loading/分页/异常状态等不扩展范围转为检查项，不作为主事实来源，不反向补充 Non-goals 或 Rules 章节。 -->
 
 以下内容不扩展：
 
@@ -834,17 +910,24 @@ updated: 2026-06-29
 ---
 
 ## 9. Pending Boundary
+<!-- section_layer: F -->
+<!-- layer_note: NAV-B001 仅作为全局导航入口路由映射 pending 读取，用于说明导航入口具体 URL 确认前不固定；不得扩写为导航高亮、默认高亮或导航选中态规则，也不新增其它 pending。 -->
 
 * `NAV-B001`：影响顶部导航入口路由映射；确认前不固定具体 URL。
 
 ## 10. Non-goals
+<!-- section_layer: F -->
+<!-- layer_note: 不扩展登录态、导航跳转细节、掉落详情、商品详情、下单流程内部规则，以及支付、库存、订单、发货、资产、权益到账、结算系统规则的范围边界按 F 读取；pending 明细不转写为已确认事实。 -->
 
 * 不扩展登录态、导航跳转细节、掉落详情、商品详情、下单流程内部规则。
 * 不扩展支付、库存、订单、发货、资产、权益到账、结算系统规则。
 * 不把 pending 明细转写为已确认事实。
 
 ## 11. Maintenance Log
+<!-- section_layer: Unknown -->
+<!-- layer_note: 维护记录仅用于 source 治理追溯和变更摘要，不作为 Delivery Output 正文事实来源；如用于变更追溯或规则演进判断，需人工确认。 -->
 
 2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
 2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.
-2026-06-28 | pending_boundary_cleanup | Reframed Home default navigation highlight as NAV-B004 pending boundary without confirming Bomcase or Shop.
+2026-06-28 | pending_boundary_cleanup | Aligned Home navigation highlight notes with current confirmed source boundaries without creating a separate navigation-highlight pending.
+2026-07-01 | confirmed_fact_fix | Removed stale NAV-B004 pending reference from Home maintenance log; NAV-B001 remains only for global navigation route mapping.

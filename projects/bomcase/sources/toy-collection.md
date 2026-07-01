@@ -12,12 +12,16 @@ updated: 2026-06-29
 # Toy Collection Active Source
 
 ## 1. Source Scope
+<!-- section_layer: F -->
+<!-- layer_note: source 身份、事实范围、pending 维护边界和读取边界按 F 读取。 -->
 
 本文件是 Toy Collection 页面当前 active source（`source_type: handoff_document`），用于维护页面事实、字段、状态、交互与验收口径。
 
 pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 
 ## 2. Page Goal
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面用途、收藏统计范围、筛选查看能力和卡牌状态展示范围为 F；用户可见的页面入口、状态名称和统计表达仅作辅助读取，正文文案以 Data / Fields、States 与 Interactions 章节为主，读取时必须局部拆分。 -->
 
 该页面用于展示用户潮玩图鉴收藏信息，包括：
 
@@ -41,8 +45,12 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 3. Structure
+<!-- section_layer: F+E -->
+<!-- layer_note: 页面区域结构、区域位置、模块关系、筛选区与列表区承接关系为 F；区域内可见元素名称、标签、图标和展示文案为 E，读取时必须局部拆分。 -->
 
 ### 1. 顶部导航区
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部导航区的位置、已有功能边界和当前页面高亮状态为 F；BOMCASE Logo、公测版标签、导航菜单项、入口名称和头像等可见元素为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -95,6 +103,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 2. 顶部全站统计区
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部全站统计区的位置、收藏进度卡片与 SSR 顶级藏品统计卡片的结构关系为 F；统计卡片标题、SSR 标题、展示图和可见统计表达为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -159,6 +169,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 3. 分类 Tab 与筛选区
+<!-- section_layer: F+E -->
+<!-- layer_note: 分类、系列、拥有状态筛选的区域关系、默认选中、联动/不联动边界和多条件过滤关系为 F；分类名、当前系列名称、状态名称和下拉箭头等可见表达为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -262,6 +274,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 4. 系列卡组列表区
+<!-- section_layer: F+E -->
+<!-- layer_note: 系列、卡组、兑换区、单卡列表的包含关系，横向滚动、懒加载和卡牌来源不影响单卡交互逻辑的边界为 F；系列标签、卡组标题、描述、稀有度统计和收藏进度等可见表达为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -303,6 +317,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 5. 集齐兑换区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 集齐兑换区域位于卡组内部、当前未开放且不支持点击为 F；礼物 icon、固定标题文案和固定副文案为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -330,6 +346,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 6. 单卡列表区域
+<!-- section_layer: F+E -->
+<!-- layer_note: 单卡列表位于卡组底部、单卡点击打开已有功能弹窗以及弹窗不展开边界为 F；稀有度标签、单卡名称、图片、拥有状态 icon、隐藏款和全站唯一 SSR 等展示属性为 E，读取时必须局部拆分。 -->
 
 位置：
 
@@ -375,6 +393,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 4. Data / Fields
+<!-- section_layer: F+E -->
+<!-- layer_note: 字段所属区域、字段含义、统计口径、状态布尔值和筛选/展示关系为 F；示例值、分类名称、状态名称、图标、标签、按钮和固定文案为 E，读取时必须局部拆分。 -->
 
 | 区域      | 示例值                         | 说明                                 |
 | ------- | --------------------------- | ---------------------------------- |
@@ -420,8 +440,12 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 5. States
+<!-- section_layer: F+E -->
+<!-- layer_note: 默认状态、筛选状态、卡组列表状态、单卡状态规则、兑换区状态和空状态触发条件为 F；状态名称、图标、标签、占位符、按钮文案和固定展示文案为 E，读取时必须局部拆分。 -->
 
 ### 1. 页面默认状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 默认选中第一个分类 Tab、默认系列筛选和默认解锁状态筛选为 F；“枪械”“全部系列”“未解锁”等当前截图展示文案为 E，读取时必须局部拆分。 -->
 
 - 默认选中第一个分类 Tab。
     
@@ -446,6 +470,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 2. 顶部统计区
+<!-- section_layer: F+E -->
+<!-- layer_note: 顶部统计区有数据状态、全站统计口径和 SSR 统计不随筛选变化为 F；收藏完成度、SSR 标题、顶级单卡数量、已拥有数量和展示图为 E，读取时必须局部拆分。 -->
 
 #### 收藏进度卡片
 
@@ -492,6 +518,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 3. 分类 Tab 状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 分类 Tab 选中态与未选中态规则为 F；当前截图中“枪械”为选中态和高亮显示属于可见表达，按 E 读取。 -->
 
 #### 选中态
 
@@ -515,6 +543,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 4. 系列与筛选状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 系列下拉单选、最多 9 个系列、分类切换后系列列表变化、单卡解锁状态筛选和下方列表过滤规则为 F；“全部”“已解锁”“未解锁”等筛选项文案为 E，读取时必须局部拆分。 -->
 
 #### 系列筛选
 
@@ -556,6 +586,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 5. 卡组列表状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 卡组列表有数据状态、懒加载、横向滚动、鼠标拖动滚动条和稀有度统计非必备规则为 F；卡组、单卡列表、收藏进度和稀有度统计等展示内容为 E，读取时必须局部拆分。 -->
 
 #### 有数据状态
 
@@ -589,6 +621,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 6. 单卡状态规则
+<!-- section_layer: F+E -->
+<!-- layer_note: 已解锁/未解锁状态定义、已兑换或消耗后仍归类为已解锁、隐藏款为展示属性、隐藏款未获得组合表现和全站唯一 SSR 语义为 F；绿色勾选 icon、锁 icon、“隐藏款”“？”和“仅此一张”等可见表达为 E，读取时必须局部拆分。 -->
 
 #### 已解锁状态
 
@@ -651,6 +685,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 7. 集齐兑换区域状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 集齐兑换区域当前未开放且不支持点击为 F；“集齐兑换：敬请期待”“更多兑换内容后续开放”等固定展示文案为 E，读取时必须局部拆分。 -->
 
 当前状态：
 
@@ -671,6 +707,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 8. 空状态
+<!-- section_layer: F+E -->
+<!-- layer_note: 卡组为空时展示文字按钮和点击后跳转商城页为 F；“去商城看看”按钮文案为 E，读取时必须局部拆分。 -->
 
 当前已确认：
 
@@ -690,8 +728,12 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 6. Interactions
+<!-- section_layer: F+E -->
+<!-- layer_note: 触发对象、触发条件、点击结果、适用范围和不适用情况为 F；触发对象名称、状态名称、按钮文案和空状态展示文案为 E，读取时必须局部拆分。 -->
 
 ### 1. 分类 Tab 切换
+<!-- section_layer: F+E -->
+<!-- layer_note: 点击分类后筛选下方卡组内容、系列筛选列表随分类变化、多条件 AND 过滤和顶部 SSR 统计不随分类变化为 F；分类 Tab 名称仅作为触发对象可见表达，按 E 读取。 -->
 
 - 触发对象：分类 Tab
     
@@ -718,6 +760,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 2. 系列筛选
+<!-- section_layer: F+E -->
+<!-- layer_note: 用户选择系列后筛选当前系列内容、单选、最多 9 个系列、系列列表随分类变化、多条件 AND 过滤和顶部 SSR 统计不随系列变化为 F；系列下拉框与系列名称为 E，读取时必须局部拆分。 -->
 
 - 触发对象：系列下拉框
     
@@ -746,6 +790,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 3. 单卡状态筛选
+<!-- section_layer: F+E -->
+<!-- layer_note: 选择状态后筛选对应单卡状态、解锁状态不联动分类/系列列表、参与下方过滤、多条件 AND 过滤和未解锁筛选隐藏已解锁单卡为 F；状态下拉框及“未解锁”等状态文案为 E，读取时必须局部拆分。 -->
 
 - 触发对象：状态下拉框
     
@@ -776,6 +822,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 4. 单卡点击
+<!-- section_layer: F -->
+<!-- layer_note: 单卡点击触发、打开已有功能弹窗、隐藏款与普通单卡点击逻辑一致以及弹窗不展开边界均为交互规则，按 F 读取。 -->
 
 - 触发对象：单卡
     
@@ -798,6 +846,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 5. 卡组区域横向滚动
+<!-- section_layer: F -->
+<!-- layer_note: 卡组内容区域在横向超出时支持拖动滚动条，内容未超出时不触发，按交互触发和适用边界 F 读取。 -->
 
 - 触发对象：卡组内容区域
     
@@ -813,6 +863,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 6. 空状态按钮
+<!-- section_layer: F+E -->
+<!-- layer_note: 卡组为空时展示按钮、点击后跳转商城页和有卡组数据时不展示为 F；“去商城看看”按钮文案为 E，读取时必须局部拆分。 -->
 
 - 触发对象：去商城看看
     
@@ -828,6 +880,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### Empty States
+<!-- section_layer: F+E -->
+<!-- layer_note: 卡组列表区无卡组数据触发空状态、展示按钮和点击跳转商城页为 F；“当前系列暂无卡组”“去商城看看”等空状态文案和按钮文案为 E，读取时必须局部拆分。 -->
 
 | 模块    | 触发条件  | 展示文案     | 是否展示按钮 | 按钮文案  | 点击结果  |
 | ----- | ----- | -------- | ------ | ----- | ----- |
@@ -836,6 +890,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 7. Rules
+<!-- section_layer: F -->
+<!-- layer_note: 页面展示规则、筛选展示边界、交互边界、统计取整、单卡状态定义、隐藏款属性、筛选联动与多条件 AND 过滤均按 F 读取；示例值不固化为完整系统规则的边界也按 F 读取。 -->
 
 * 规则仅覆盖页面展示规则、筛选展示边界与交互边界。
 * 收藏完成度整数百分比按向下取整展示。
@@ -848,8 +904,12 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 * 示例值用于表达字段形态，不直接固化为完整系统规则。
 
 ## 8. Acceptance Criteria
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；本章仅用于 coverage check、测试验收和产品人工验收，不作为主事实来源，不反向补充或修正 F / E 正文事实。 -->
 
 ### 1. 页面结构验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将页面结构、懒加载、横向滚动和已有功能边界转为 coverage check，不作为主事实来源，不反向补充 Structure 或 Interactions 章节。 -->
 
 - 页面包含：
     
@@ -875,6 +935,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 2. 字段展示验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将字段、统计口径、标签、状态图标和展示要求转为 coverage check，不作为主事实来源，不反向补充 Data / Fields 或 States 章节。 -->
 
 - 文案与确认内容一致。
     
@@ -902,6 +964,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 3. 状态验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将默认状态、筛选联动、单卡状态、隐藏款表现、空状态和兑换区状态转为 coverage check，不作为主事实来源，不反向补充 States 或 Rules 章节。 -->
 
 - 默认选中第一个分类 Tab。
     
@@ -939,6 +1003,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 4. 交互验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将分类切换、系列筛选、单卡状态筛选、单卡点击、横向滚动和空状态按钮跳转转为 coverage check，不作为主事实来源，不反向补充 Interactions 章节。 -->
 
 - 分类 Tab 可点击切换。
     
@@ -958,6 +1024,8 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ### 5. 范围控制验收
+<!-- section_layer: A:view -->
+<!-- layer_note: A:view validation-only；将禁止新增截图外功能、未确认业务规则、兑换逻辑和隐藏款额外交互逻辑转为 coverage check，不作为主事实来源，不反向补充 Non-goals 或 Rules 章节。 -->
 
 - 不新增截图中未出现的功能。
     
@@ -973,17 +1041,24 @@ pending 细项只在 `pending.md` 维护，本文件仅承接 pending 边界。
 ---
 
 ## 9. Pending Boundary
+<!-- section_layer: F -->
+<!-- layer_note: 当前无 active Toy Collection pending 以及后续待确认项回到 pending.md 维护的边界按 F 读取；本章不确认新的产品规则，也不把历史 stale ID 视为有效 pending。 -->
 
 * 本页当前无 active Toy Collection pending；后续待确认项以 `projects/bomcase/pending.md` 为准。
 
 ## 10. Non-goals
+<!-- section_layer: F -->
+<!-- layer_note: 不覆盖完整资产、交易、兑换、养成、背包系统规则，不新增 loading / error / empty / reset 规则，以及示例值不固化为系统规则的范围边界按 F 读取。 -->
 
 * 不扩展完整资产、交易、兑换、养成、背包系统规则。
 * 不新增 loading / error / empty / reset 规则。
 * 不把截图示意或示例值写成固定系统规则。
 
 ## 11. Maintenance Log
+<!-- section_layer: Unknown -->
+<!-- layer_note: 维护记录仅用于 source 治理追溯，不作为 Delivery Output 正文事实来源；如用于变更判断需人工确认，且不把 TC-B006 / TC-B007 视为已登记 pending。 -->
 
-2026-06-28 | pending_boundary_cleanup | Reframed Toy Collection filtering relationship rules as pending boundaries for TC-B006 and TC-B007.
+2026-06-28 | pending_boundary_cleanup | Aligned Toy Collection filtering relationship notes with current confirmed source boundaries.
+2026-07-01 | confirmed_fact_fix | Removed stale TC-B006 / TC-B007 pending references from Toy Collection maintenance log; no active Toy Collection pending item added.
 2026-06-28 | expression_cleanup | Frontmatter migration: aligned to active source model. No business facts changed.
 2026-06-28 | schema_migration | Migrated brief/source structure to BOMCASE Unified Schema v1 without changing product facts.
