@@ -77,6 +77,8 @@ They are no longer callable prompt entries.
 
 It must not contain page-specific business facts.
 
+`delivery-output-handoff.md` is the active prompt for the Delivery Output family. It is responsible for Full Handoff and delivery-ready handoff generation from current page facts. It does not maintain `sources/*.md`, `pages/*.md`, `pending.md`, or `decisions.md`.
+
 ### Delivery Output v0.3 Information Layer Compatibility
 
 `delivery-output-handoff.md` remains the active Delivery Output prompt and now supports v0.3 information-layer reading compatibility.
@@ -122,6 +124,25 @@ Full mode must preserve the delivery granularity of active source, including:
 - bottom summary copy
 
 If Copy Coverage fails, the generator must output Copy Coverage Failure Report instead of claiming a complete handoff document.
+
+### Delivery Output Body Capabilities
+
+Full Mode now includes a Completeness Floor. It may improve readability through structure, de-duplication, and repeated-explanation compression, but it must not compress fields, states, interactions, user-facing copy, boundaries, or acceptance criteria into summaries.
+
+Shorter output is not a pass criterion. Coverage, implementability, and testability are the pass criteria.
+
+Generation Report is governance and self-check material, not development delivery body. A normal Full test draft may append `Delivery Output Generation Report` for governance review, including Coverage Baseline Comparison. When a command explicitly asks for `delivery-ready`, `正式交付正文`, `不包含 Generation Report`, `只输出研发交付正文`, or equivalent formal-body wording, the handoff delivery body must not include Generation Report.
+
+Section 12 uses referenced acceptance. Ordinary fields, ordinary interactions, ordinary states, and ordinary explanatory groups should use section-level references when they remain checkable and testable. Reference ids are not a default formatting pattern for the whole document. Row-level ids should be kept only when Section 12 needs row-level validation for high-risk states, state transitions, result branches, settlement or service-return boundaries, or pending / supplement tracking.
+
+Within the fixed 13-section handoff body, fields, states, interactions, and acceptance should preferentially follow the page-region order from the active source and page brief. Density is residual: document density is not a compression target and must not override coverage.
+
+Drafts under `outputs/handoff/_drafts` may be read only as validation samples or comparison samples when explicitly requested. They must not be used as fact sources, prompt templates, or source / page brief write-back material.
+
+Practical invocation distinction:
+
+- Normal Full test draft: may request Generation Report and Coverage Baseline Comparison for governance review.
+- Formal delivery draft / delivery-ready handoff: should explicitly request `delivery-ready` or `正式交付正文`, and should state that Generation Report is not included in the development delivery body.
 
 ## Delivery Output Module Change Note Prompt
 

@@ -1233,15 +1233,35 @@ Each acceptance item must remain checkable and testable.
 
 Do not write non-executable references such as "accept according to the body", "see above", "按正文验收", or "详见上方".
 
-Key rule tables that need to be referenced by section 12 acceptance should provide referenceable ids.
+Key rule tables should provide referenceable ids only when Section 12 acceptance needs row-level references to specific rows, row ranges, states, rules, interactions, or result branches.
 
-State transition rules must have explicit ids.
+### Reference ID Scope Rule
 
-The id rule must not expand into "all rules must be numbered".
+Reference ids are not a default body formatting pattern.
 
-Ordinary field tables, ordinary copy tables, and ordinary explanatory tables do not require forced numbering.
+Body rows should provide reference ids only when Section 12 acceptance needs row-level references to specific rows, row ranges, states, rules, interactions, or result branches.
 
-Reference ids are navigation aids only. They do not change fact priority, fact source, module ownership, or implementation responsibility.
+If Section 12 can validate a whole content group through a section-level reference, the body rows in that group must not be numbered by default.
+
+Ordinary field tables, ordinary interaction tables, ordinary copy tables, ordinary state tables, and ordinary explanatory rule tables must not be assigned row-level ids by default.
+
+Section 12 should preferentially use section-level references for ordinary fields, ordinary interactions, ordinary copy groups, ordinary state groups, and ordinary explanatory groups, while still writing checkable and testable acceptance assertions.
+
+State transition rules must keep explicit ids when they require row-level acceptance.
+
+Historically high-risk multi-state UI copy groups may keep row-level ids when Section 12 needs each state or scenario to be validated separately, such as page-specific half-expanded / fully-expanded state groups or other multi-scenario copy groups identified from the active source.
+
+Pending or supplement items may keep stable ids for issue tracking, but those ids must not turn pending items into confirmed acceptance facts.
+
+High-risk result branches, service-return boundaries, settlement boundaries, or terminology distinctions may keep a small number of row-level ids when Section 12 explicitly needs row-level validation.
+
+Do not convert the whole handoff body into an id system merely to make content referenceable.
+
+Reference ids are navigation aids only. They do not change fact priority, fact source, module ownership, implementation responsibility, or acceptance responsibility.
+
+Removing a row-level id must not remove, summarize, or weaken the underlying fact, copy, condition, boundary, or interaction. Unnumbered content remains protected by Full Mode Completeness Floor and Copy Coverage.
+
+Section-level references must still preserve checkable and testable acceptance assertions. Reference ID Scope Rule must not reduce Section 12 acceptance granularity below the Acceptance Criteria Rules, Full Mode Completeness Floor, A:view Handling Rule, or Copy Coverage requirements.
 
 User-visible auxiliary copy, including info, hover, tooltip, and light hint copy, must have a corresponding acceptance item or referenced acceptance item.
 

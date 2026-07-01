@@ -155,6 +155,23 @@
 * 待确认 / 待补充项在交付正文中应按“是否阻塞开发启动 / 是否影响验收 / 是否属于后续补充边界”表达，不使用“已登记 / 未登记 / pending / 全局待确认池”等内部管理表达。
 * Test-4 通过 Copy Coverage 验证仅作为 workflow 验证结论，不作为产品事实写入。
 
+#### Delivery Output Capability Closure
+
+* 本轮 Delivery Output 能力补强已闭环。
+* Completeness Floor、Formal Body Shape、Reference ID Scope 已通过 Open Box 输出样本验证。
+* 正式研发交付稿使用 `delivery-ready` 正文形态。
+* 正式正文只包含 13 节研发交付正文，不包含 Generation Report。
+* 普通 Full 测试稿可附 Generation Report / Coverage Baseline，用于治理复盘。
+* Generation Report 是治理 / 自检报告，不是研发正文。
+* Full Mode Completeness Floor 用于防止过度压缩。
+* 字段、状态、交互、用户可见文案、info / hover、底部汇总、验收边界不得摘要化。
+* Reference ID Scope 用于防止全文编号化。
+* 编号只服务第 12 节验收口径中的行级验收引用。
+* 普通字段、普通交互、普通状态、普通说明优先使用章节级引用。
+* page brief / active source / `pending.md` / `decisions.md` 仍是 Delivery Output 事实读取链路。
+* output drafts 仅作为验证样本，不反推事实层或 prompt 模板。
+* 本轮能力治理不写入 `pending.md`，`pending.md` 仅记录产品待确认项。
+
 ## 9. Source / Brief Object Spec Decisions
 
 ### BOM-D013 Source / Brief Object Spec v0.1
