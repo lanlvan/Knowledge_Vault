@@ -376,6 +376,23 @@ Do not:
 
 ---
 
+## 10.5 v0.3 Information Layer Compatibility
+
+These rules protect the v0.3 information-layer governance result while preserving this prompt's role as an existing-page fact update loop.
+
+When the target source already contains `section_layer` / `layer_note`:
+
+* Preserve existing annotations unless the confirmed update directly changes the affected heading or section purpose.
+* After modifying the body under any `##` or `###` heading, check whether that heading's `layer_note` still matches the updated content.
+* When adding a new `##` or `###` heading, add exactly one matching `section_layer` and one `layer_note` directly under that heading.
+* When deleting, merging, splitting, or renaming headings, check that heading count, `section_layer` count, and `layer_note` count remain aligned for the affected scope.
+* After updating an `F+E` section, confirm that the local F / E split still holds.
+* Use `A:view` only for coverage check / acceptance review. Do not use `A:view` as the source of a confirmed fact write.
+* Do not automatically promote `Unknown` to confirmed fact unless the user explicitly confirms the affected content.
+* Do not infer current-page layer changes mechanically from other page samples.
+
+---
+
 ## 11. Patch Rules
 
 Patch rules:
@@ -419,6 +436,10 @@ After producing or applying a patch, check:
 | pending awareness | Pending awareness matches current `pending.md`. |
 | decisions boundary | Decisions were not given single-page details. |
 | Maintenance Log | Source log was appended when source changed. |
+| v0.3 annotation count | If source contains `section_layer` / `layer_note`, affected heading count equals affected `section_layer` count equals affected `layer_note` count. |
+| v0.3 layer note match | Affected section `layer_note` still matches the updated section content. |
+| A:view boundary | `A:view` was not used as a confirmed fact source. |
+| Unknown boundary | `Unknown` was not written as confirmed fact without explicit human confirmation. |
 | forbidden sources | No forbidden fact sources were read. |
 | output boundary | No `outputs/**` or `archive/**` files were modified. |
 | prompt boundary | This prompt did not replace bootstrap, pending update, or delivery output workflows. |

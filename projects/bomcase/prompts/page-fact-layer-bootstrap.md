@@ -4,7 +4,7 @@ type: prompt
 status: active
 version: v0.1
 role: page_fact_layer_bootstrap
-schema_basis: source-brief-object-spec.md v0.2
+schema_basis: source-brief-object-spec.md v0.3
 updated: 2026-06-28
 ---
 
@@ -133,15 +133,15 @@ projects/bomcase/specs/source-brief-object-spec.md
 Current schema authority:
 
 ```text
-Source / Brief Object Spec v0.2
+Source / Brief Object Spec v0.3
 ```
 
-Spec v0.2 has locked the current required structures:
+Spec v0.3 preserves the current required structures and adds information-layer reading governance:
 
 * active source: 11 top-level sections;
 * page brief: 8 top-level sections.
 
-This prompt must follow spec v0.2.
+This prompt must follow spec v0.3.
 
 If `source-brief-object-spec.md` is upgraded in the future, this prompt must be reviewed and updated accordingly.
 
@@ -253,7 +253,7 @@ Rules:
 
 ## 8. Active Source Structure
 
-The source must follow `source-brief-object-spec.md` v0.2.
+The source must follow `source-brief-object-spec.md` v0.3.
 
 Required top-level structure:
 
@@ -307,6 +307,23 @@ Do not write the source as a delivery handoff document.
 
 ---
 
+## 8.5 v0.3 Information Layer Annotation Requirements
+
+These rules protect the v0.3 information-layer governance result while preserving this prompt's role as a new page initialization / reconstruction workflow.
+
+* v0.3 keeps the 11-section source structure and 8-section page brief structure.
+* When generating or reconstructing an active source, add `section_layer` and `layer_note` for all `##` / `###` headings whenever the raw material supports a safe judgment.
+* `section_layer` may use only `F`, `E`, `F+E`, `A:view`, or `Unknown`.
+* `section_layer` and `layer_note` must be placed directly under the heading they annotate.
+* Do not insert annotation comments into ordinary paragraphs.
+* `Acceptance Criteria` defaults to `A:view` unless it reveals new facts that must first be written back into F / E sections.
+* `Pending Boundary` defaults to F.
+* `Maintenance Log` defaults to `Unknown`.
+* If raw material is insufficient to judge the layer, mark `Unknown` or output a Fact Gap; do not guess.
+* If bootstrap does not complete full v0.3 annotation, the bootstrap report must state: `Requires v0.3 information-layer governance before Delivery Output.`
+
+---
+
 ## 9. Page Brief Requirements
 
 The generated page brief is a compressed view, not a detailed source.
@@ -337,7 +354,7 @@ Rules:
 
 ## 10. Page Brief Structure
 
-The page brief must follow `source-brief-object-spec.md` v0.2.
+The page brief must follow `source-brief-object-spec.md` v0.3.
 
 Required top-level structure:
 
@@ -491,7 +508,7 @@ Every generated source must include a final section, formatted as:
 ## 11. Maintenance Log
 ```
 
-This section appears as the 11th and final section of the source file, per spec v0.2.
+This section appears as the 11th and final section of the source file, per spec v0.3.
 
 Initial creation log format:
 
@@ -545,8 +562,19 @@ Required report sections:
 
 ## 9. Delivery Readiness
 
+## v0.3 Information Layer Result
+
 ## 10. Boundary Check
 ```
+
+`## v0.3 Information Layer Result` must include:
+
+* annotation completed / not completed;
+* heading count;
+* `section_layer` count;
+* `layer_note` count;
+* `Unknown` count;
+* whether Delivery Output is allowed.
 
 ---
 
@@ -563,12 +591,15 @@ source has type: source
 source has status: active
 source has role: detailed_fact_source
 source has page matching page brief
-source follows source-brief-object-spec.md v0.2
-page brief follows source-brief-object-spec.md v0.2
+source follows source-brief-object-spec.md v0.3
+page brief follows source-brief-object-spec.md v0.3
 pending candidates are separated from confirmed facts
 decision candidates are separated from confirmed facts
 outputs are not used as fact sources
+if current project requires v0.3 information-layer governance, source has `section_layer` / `layer_note` coverage
 ```
+
+If v0.3 information-layer coverage is incomplete, mark the page as Not Ready and require v0.3 annotation before Delivery Output.
 
 If all pass, report:
 
@@ -601,7 +632,7 @@ Must not:
 * use legacy `source` / `additional_source` in page brief;
 * create source without `status: active`;
 * create source without `role: detailed_fact_source`;
-* bypass `source-brief-object-spec.md` v0.2.
+* bypass `source-brief-object-spec.md` v0.3.
 
 ---
 

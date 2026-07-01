@@ -222,6 +222,10 @@ The Governance Context Check must judge:
 * whether page briefs reference global files where project governance requires it, instead of duplicating global facts;
 * whether `decisions.md` contains constraints affecting this patch;
 * whether `project-brief.md` needs synchronization for pending overview, current priority focus, or project status summary;
+* if target source contains `section_layer` / `layer_note`, whether pending confirmation affects annotated sections;
+* how F / F+E / A:view / Unknown affects pending confirmation reliability;
+* whether `## 9. Pending Boundary` needs a `layer_note` update;
+* whether closed, missing, or stale pending IDs are retained only as Maintenance Log history and not as active pending boundary;
 * this patch's write boundary.
 
 This check is read-only and must not replace `stage-check.md`.
@@ -245,6 +249,10 @@ After the patch is applied, check only this update's local consistency:
 * `global-navigation.md` contains only confirmed navigation facts;
 * `project-brief.md` pending summary is current if it was affected;
 * `decisions.md` was updated only if upgrade criteria were met;
+* affected source `section_layer` / `layer_note` still matches the updated pending state;
+* `## 9. Pending Boundary` does not retain closed or missing pending as active;
+* `A:view` was not used alone for pending closure;
+* `Unknown` did not drive closure without explicit human confirmation;
 * no derived pending candidate was written without user confirmation.
 
 This local check does not replace `stage-check.md`.
@@ -294,6 +302,18 @@ Do not update `project-brief.md` for every single pending closure if the project
 Update only when the confirmed result meets the Decisions Upgrade Rules.
 
 Do not add pending IDs or single-page details to `decisions.md`.
+
+## 6.5 v0.3 Information Layer Check for Pending Closure
+
+These rules protect the v0.3 information-layer governance result while preserving this prompt's role as the pending closure loop.
+
+* Pending closure should be supported first by F content or by the F portion of an F+E section.
+* E-only content may confirm user-visible wording, but it generally cannot close structure or rule pending items by itself.
+* `A:view` cannot be the main fact source for closing, rewriting, or merging pending items.
+* `Unknown` can affect pending closure only after explicit human confirmation.
+* After a pending ID is closed, merged, rewritten, or judged missing, source Pending Boundary must not keep it as active pending.
+* Closed or stale IDs may remain only as Maintenance Log history, not as active pending boundary.
+* Page brief Pending Awareness must stay synchronized with `pending.md`.
 
 ---
 
