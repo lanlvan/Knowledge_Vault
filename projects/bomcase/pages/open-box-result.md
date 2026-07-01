@@ -2,7 +2,7 @@
 project: bomcase
 type: page_brief
 status: current
-knowledge_role: handoff-brief
+knowledge_role: fact-brief
 active_source: ../sources/open-box-result.md
 updated: 2026-07-01
 ---
@@ -44,7 +44,7 @@ updated: 2026-07-01
 
 ## 6. Decision Boundary
 
-* 承接 `BOM-D007`：本页为 `handoff-brief`，不替代 source 事实层。
+* 承接 `BOM-D007`：本页已升级为 `fact-brief`，仍不替代 active source；完整字段、状态、交互、验收仍以 `../sources/open-box-result.md` 为准。
 * 承接 `BOM-D010`：截图示意不覆盖规则，验收按 source 与已确认口径执行。
 
 ## 7. Non-goals
@@ -57,5 +57,6 @@ updated: 2026-07-01
 
 * brief 仅维护摘要、边界与读取路径；完整字段、状态、交互、验收留在 source。
 * 若顶部反馈、本次获得饰品区、保底奖励标识或水晶提示口径变化，先更新 source 再回写 brief。
+* 2026-07-01 | role_upgrade | Upgraded Open Box Result page brief from handoff-brief to fact-brief after role review; no business facts changed.
 * 2026-07-01 | brief_sync | Synced Open Box Result brief with source change: guarantee reward now merges into backend-ordered acquired ornament list.
 * 2026-06-28 | schema_migration | Migrated brief structure to BOMCASE Unified Schema v1 without changing product facts.
