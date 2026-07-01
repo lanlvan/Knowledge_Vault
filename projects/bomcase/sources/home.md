@@ -108,6 +108,7 @@ updated: 2026-06-29
 
 - Home 默认导航高亮显示为「Bomcase」。
     
+- 已确认部分全局导航入口页面映射：Bomcase Logo / Bomcase 对应 Home 页面；商城对应 Shop 页面；潮玩图鉴对应 Toy Collection 页面。
 
 已有功能，本次不展开：
 
@@ -779,11 +780,11 @@ updated: 2026-06-29
 
 ## 7. Rules
 <!-- section_layer: F -->
-<!-- layer_note: 页面规则覆盖展示规则、状态规则、交互边界、Banner 点击按配置执行、导航路由未确认前不固定、示例值不等同固定后端规则等均按 F 读取；NAV-B001 仅保持全局导航入口路由映射 pending，不扩写为导航高亮或选中态规则。 -->
+<!-- layer_note: 页面规则覆盖展示规则、状态规则、交互边界、Banner 点击按配置执行、部分导航入口页面映射已确认、最终 URL 与剩余入口映射未确认、示例值不等同固定后端规则等均按 F 读取；NAV-B001 仅保持全局导航入口页面映射与最终 URL pending，不扩写为导航高亮或选中态规则。 -->
 
 * 页面规则仅承接展示规则、状态规则与交互边界，不扩展完整系统规则。
 * Banner 点击行为按配置结果执行，不在页面侧固化行为枚举。
-* 导航路由在 pending 未确认前不固定；首页默认导航高亮显示为「Bomcase」。
+* 部分导航入口页面映射已确认；最终 URL 与剩余入口映射在 `NAV-B001` 未确认前不固定；首页默认导航高亮显示为「Bomcase」。
 * 页面事实以 active source 为准，示例值不等同固定后端规则。
 
 ## 8. Acceptance Criteria
@@ -911,9 +912,9 @@ updated: 2026-06-29
 
 ## 9. Pending Boundary
 <!-- section_layer: F -->
-<!-- layer_note: NAV-B001 仅作为全局导航入口路由映射 pending 读取，用于说明导航入口具体 URL 确认前不固定；不得扩写为导航高亮、默认高亮或导航选中态规则，也不新增其它 pending。 -->
+<!-- layer_note: NAV-B001 仅作为全局导航入口页面映射与最终 URL pending 读取；已确认部分入口页面映射，但最终 URL 与剩余入口映射未完全确认；不得扩写为导航高亮、默认高亮或导航选中态规则，也不新增其它 pending。 -->
 
-* `NAV-B001`：影响顶部导航入口路由映射；确认前不固定具体 URL。
+* `NAV-B001`：已确认 Bomcase Logo / Bomcase 对应 Home 页面、商城对应 Shop 页面、潮玩图鉴对应 Toy Collection 页面；最终 URL 与剩余入口页面映射 / 路由目标未完全确认。
 
 ## 10. Non-goals
 <!-- section_layer: F -->
