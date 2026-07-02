@@ -196,25 +196,33 @@
 * 背景 / 来源：`projects/bomcase/specs/source-brief-object-spec.md` v0.1 最小草案创建与第一轮校验。
 * 影响范围：BOMCASE page brief 与 active source 的最小对象治理起点。
 * superseded_by：BOM-D014
-* 当前口径：当前维护已切换到 `projects/bomcase/specs/source-brief-object-spec.md` `version: v0.2`。
+* 当前口径：当前维护已进一步切换到 `projects/bomcase/specs/source-brief-object-spec.md` `version: v0.3`；v0.1 / v0.2 作为历史阶段保留。
 * 状态：superseded
 
-### BOM-D014 Unified Schema v1 / Source-Brief Object Spec v0.2
+### BOM-D014 Unified Schema v1 / Source-Brief Object Spec v0.3
 
 * 编号：BOM-D014
 * 类型：source-brief-object-governance
 * 层级：project
 * 原编号：无。该条为本轮新增项目级判断，不从旧 D 编号迁移。
-* 判断：BOMCASE Unified Schema v1 / `source-brief-object-spec.md` v0.2 成为当前 page brief 与 active source 的统一维护骨架。
+* 判断：BOMCASE Unified Schema v1 / `source-brief-object-spec.md` v0.3 是当前 page brief 与 active source 的统一维护骨架和信息层读取规范。
 * 适用范围：5 个 page brief + 5 个 active source。
 * 具体口径：
-  * brief 统一为 8 段骨架，source 统一为 11 段骨架；
+  * v0.3 保留 v0.2 已落地的 brief 8 段骨架与 source 11 段骨架；
+  * v0.3 在 v0.2 基础上增加 / 强化 active source information-layer annotation；
+  * source headings 在适用时应维护 `section_layer` 与 `layer_note`；
+  * `section_layer` 允许值为 `F` / `E` / `F+E` / `A:view` / `Unknown`；
+  * `F` 可作为确定事实读取；`E` 可作为用户可见表达读取；`F+E` 必须按局部拆分读取；
+  * `A:view` 只用于 coverage / acceptance check，不作为主事实来源，不反向覆盖 F / E；
+  * `Unknown` 不进入确定正文事实，进入 Delivery Output / handoff / Change Note 前必须人工确认；
+  * page brief 仍是 compressed reading layer，不替代 active source；
+  * active source 仍是详细字段、状态、交互、验收边界的事实源；
+  * Delivery Output 必须回到 active source 读取详细字段、状态、交互、验收，并结合 page brief、`pending.md`、`decisions.md` 判断边界；
   * Open Box 不作为结构例外，只作为高复杂度样本；
   * source_type 保持差异：Open Box 为 `consolidated_source`，Home / Shop / Open Box Result / Toy Collection 为 `handoff_document`；
   * 统一结构不等于统一颗粒度，不要求其它页面补到 Open Box 颗粒度；
-  * `pending.md` 仍是唯一未确认事实池，`decisions.md` 仍是稳定项目判断池；
-  * outputs / drafts / archive 不作为当前事实源；
-  * Delivery Output 事实读取继续遵循 `page brief -> active source -> pending.md -> decisions.md`。
-* 背景 / 来源：Unified Schema v1 在 5 页 brief/source 骨架已落地，v0.1 与当前事实层发生脱节，需要以 v0.2 固化当前维护口径。
-* 影响范围：BOMCASE 后续 brief/source 维护、结构对齐与事实读取边界解释。
+  * `pending.md` 仍是唯一 active pending pool，`decisions.md` 仍只记录稳定项目级判断；
+  * outputs / archive / draft outputs 不作为当前事实源。
+* 背景 / 来源：v0.3 来源于当前 5 个 active source information-layer governance 与 fact-layer prompts 的 v0.3 compatibility patch；v0.3 是对 v0.2 Unified Schema v1 的信息层扩展，不重建 source / brief 对象关系，不新增页面业务事实。
+* 影响范围：BOMCASE 后续 brief/source 维护、结构对齐、信息层读取、Delivery Output 事实读取边界解释。
 * 状态：active
