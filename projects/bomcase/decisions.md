@@ -56,12 +56,13 @@
 * 原编号：无。该条为本轮新增项目级判断，不从旧 D 编号迁移。
 * 判断：BOMCASE `pages/` 下 page brief 按 `knowledge_role` 区分为 `fact-brief` 与 `handoff-brief`。
 * 具体口径：
-  * `open-box.md`、`open-box-result.md` 当前为 `fact-brief`，可作为当前页面事实口径层读取；
-  * `home.md`、`shop.md`、`toy-collection.md` 当前为 `handoff-brief`，用于研发交接、页面理解和待确认承接；
+  * `open-box.md`、`open-box-result.md`、`shop.md` 当前为 `fact-brief`，可作为当前页面事实口径层读取；
+  * `home.md`、`toy-collection.md` 当前为 `handoff-brief`，用于研发交接、页面理解和待确认承接；
   * `handoff-brief` 不等同于事实源，不替代 source；
   * 事实争议仍回到 `sources/*` 核对。
 * 背景/来源：本轮 BOMCASE Knowledge Vault 第一轮结构治理与 page brief role 治理结果。
 * 同步记录：2026-07-01: Open Box Result upgraded to fact-brief after page brief role review; no business facts changed.
+* 同步记录：2026-07-01: Shop upgraded to fact-brief after page brief role review; no business facts changed.
 * 影响范围：影响 BOMCASE 页面层读取顺序、AI 读取判断、page brief 与 source 的关系解释。
 * 状态：active
 

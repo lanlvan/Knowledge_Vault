@@ -13,7 +13,7 @@
 | 页面 | 当前 page brief | 当前 source | status | knowledge_role | 说明 |
 |---|---|---|---|---|---|
 | home | `pages/home.md` | `sources/home.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
-| shop | `pages/shop.md` | `sources/shop.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
+| shop | `pages/shop.md` | `sources/shop.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
 | open-box | `pages/open-box.md` | `sources/open-box.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
 | open-box-result | `pages/open-box-result.md` | `sources/open-box-result.md` | current | fact-brief | 当前已沉淀为页面事实口径层。 |
 | toy-collection | `pages/toy-collection.md` | `sources/toy-collection.md` | current | handoff-brief | 当前用于研发交接、页面理解和待确认承接。 |
@@ -26,7 +26,7 @@
 * `decisions.md` 已记录当前工作台迁移和边界判断；
 * 已形成 source / page brief / pending / decisions 的基础闭环；
 * pages 下文件是当前可读页面层，但按 `knowledge_role` 区分为 `fact-brief` 与 `handoff-brief`；
-* 当前 `open-box.md` 与 `open-box-result.md` 为 `fact-brief`；`home.md`、`shop.md`、`toy-collection.md` 仍为 `handoff-brief`；
+* 当前 `open-box.md`、`open-box-result.md` 与 `shop.md` 为 `fact-brief`；`home.md`、`toy-collection.md` 仍为 `handoff-brief`；
 * 当前 facts 以本项目 `sources/` 为准，后续不再依赖 V1 作为 active reference。
 
 ## 4. 读取顺序
@@ -81,7 +81,7 @@
 * `projects/bomcase/decisions.md` 承接 BOMCASE 项目级产品判断；
 * 当前 `sources/` 是事实底座；
 * pages 下文件是当前可读页面层，page brief 按 `knowledge_role` 区分 `fact-brief` 与 `handoff-brief`；
-* `open-box.md`、`open-box-result.md` 当前为 `fact-brief`；`home.md`、`shop.md`、`toy-collection.md` 当前为 `handoff-brief`；
+* `open-box.md`、`open-box-result.md`、`shop.md` 当前为 `fact-brief`；`home.md`、`toy-collection.md` 当前为 `handoff-brief`；
 * `handoff-brief` 用于研发交接、页面理解和待确认承接，不等同于事实源，也不替代 `sources/*`；
 * 事实争议或核对场景仍回到 `sources/*.md`；
 * 页面表达不替代完整业务规则。
