@@ -16,10 +16,10 @@
 | 页面 | Brief | Active Source | status | knowledge_role | 待确认数量 | 说明 |
 |---|---|---|---|---|---:|---|
 | home | `home.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - | 用于研发交接、页面理解和待确认承接。 |
-| shop | `shop.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - | 用于研发交接、页面理解和待确认承接。 |
+| shop | `shop.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | fact-brief | - | 当前已沉淀为页面事实口径层。 |
 | open-box | `open-box.md` | `../sources/open-box.md` | current | fact-brief | - | Open Box 当前 page brief 指向 `../sources/open-box.md` 作为 active source。 |
-| open-box-result | `open-box-result.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - | 用于研发交接、页面理解和待确认承接。 |
-| toy-collection | `toy-collection.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - | 用于研发交接、页面理解和待确认承接。 |
+| open-box-result | `open-box-result.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | fact-brief | - | 当前已沉淀为页面事实口径层。 |
+| toy-collection | `toy-collection.md` | 以该页面 brief frontmatter 的 `active_source` 为准 | current | fact-brief | - | 当前已具备页面事实入口能力，详细事实仍由 active source 承载。 |
 
 待确认数量以 `../pending.md` 当前汇总为准。
 
@@ -29,7 +29,8 @@
 * `fact-brief`：已治理沉淀，可作为当前页面口径承接层；
 * `handoff-brief`：由交接文件压缩形成，用于研发交接、页面理解和待确认承接；
 * `handoff-brief` 不替代 source；
-* 当前仅 `open-box.md` 为 `fact-brief`，其它页面为 `handoff-brief`；
+* 当前 `open-box.md`、`open-box-result.md`、`shop.md`、`toy-collection.md` 为 `fact-brief`；
+* 当前 `home.md` 为 `handoff-brief`；
 * 每个页面的详细事实载体以 page brief frontmatter 声明的 `active_source` 为准。
 
 ## 3. 推荐读取方式
@@ -43,6 +44,7 @@
 ## 4. 页面 brief 使用边界
 
 * `pages/*.md` 是当前可读页面层，但不同文件的知识性质可能不同；
+* 本 README 是页面索引，不作为页面产品事实源；
 * `pages/*.md` 不替代 `../sources/` 详细事实材料；
 * `pages/*.md` 不定义完整业务规则；
 * `../pending.md` 是正式产品待确认池，`pages/*.md` 待确认区需与其保持口径一致；

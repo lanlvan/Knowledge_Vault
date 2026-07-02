@@ -47,20 +47,19 @@
 | 页面 | Brief | Active Source | status | knowledge_role | 待确认数量 |
 |---|---|---|---|---|---:|
 | home | `pages/home.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
-| shop | `pages/shop.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
+| shop | `pages/shop.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | fact-brief | - |
 | open-box | `pages/open-box.md` | `sources/open-box.md` | current | fact-brief | - |
-| open-box-result | `pages/open-box-result.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
-| toy-collection | `pages/toy-collection.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | handoff-brief | - |
+| open-box-result | `pages/open-box-result.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | fact-brief | - |
+| toy-collection | `pages/toy-collection.md` | 以 page brief frontmatter 的 `active_source` 为准 | current | fact-brief | - |
 
 待确认数量以 `pending.md` 当前汇总为准。
 
 补充说明：
 
 * `pages/*.md` 当前均为可读页面层，但知识性质不同；
-* `open-box.md` 已沉淀为 `fact-brief`（当前页面口径承接层）；
-* `home.md`、`shop.md`、`open-box-result.md`、`toy-collection.md` 当前为 `handoff-brief`；
+* `open-box.md`、`open-box-result.md`、`shop.md`、`toy-collection.md` 当前为 `fact-brief`；
+* `home.md` 当前为 `handoff-brief`；
 * `handoff-brief` 用于研发交接、页面理解和待确认承接；
-* 除 `open-box.md` 外，其它 handoff-brief 当前不作为页面事实口径层使用；
 * 所有 page brief 均不替代 `sources/*.md`；
 * 事实争议或核对场景以 page brief 声明的 `active_source` 为入口；
 * 页面与项目入口统计以 `pending.md` 正式条目为准。
@@ -74,7 +73,7 @@
 
 ## 6. 使用边界
 
-* README 是导航，不是事实源；
+* README 是导航与状态索引，不是事实源，不替代 page brief、active source、pending 或 decisions；
 * 本项目当前优先沉淀页面表达和交接信息；
 * 不直接定义支付、库存、发货、资产、权益、奖励、结算、订单、会员、活动、背包、交易、兑换、养成等完整业务规则；
 * 不承接设计待办、UI 出稿事项、研发任务、测试用例、项目排期或纯视觉实现细节；
